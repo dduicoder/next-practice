@@ -1,14 +1,71 @@
+import { Fragment } from "react";
+import Head from "next/head";
+import { MongoClient, ObjectId } from "mongodb";
+
 import Meetup from "../../components/meetups/Meetup";
 
-const MeetupDetail = () => {
+const MeetupDetail = ({ meetup }) => {
   return (
-    <Meetup
-      title="Fish"
-      image="https://www.takemefishing.org/getmedia/bde1c54e-3a5f-4aa3-af1f-f2b99cd6f38d/best-fishing-times-facebook.jpg?width=1200&height=630&ext=.jpg"
-      address="Somewhere"
-      description="Lets Fish!"
-    />
+    <Fragment>
+      <Head>
+        <title>{"Meetups - " + meetup.title}</title>
+        <meta name="description" content={meetup.description} />
+      </Head>
+      <Meetup
+        title={meetup.title}
+        image={meetup.image}
+        address={meetup.address}
+        description={meetup.description}
+      />
+    </Fragment>
   );
 };
+
+export const getStaticPaths = async () => {
+  const client = await MongoClient.connect(
+    "mongodb+srv://sijinni:ddui2008@cluster0.k6kcviv.mongodb.net/meetups?retryWrites=true&w=majority"
+  );
+  const db = client.db();
+
+  const meetupsCollection = db.collection("meetups");
+
+  const meetups = await meetupsCollection.find({}, { _id: 1 }).toArray();
+
+  client.close();
+
+  return {
+    fallback: false,
+    paths: meetups.map((meetup) => ({
+      params: { meetupId: meetup._id.toString() },
+    })),
+  };
+};
+
+export async function getStaticProps(context) {
+  const client = await MongoClient.connect(
+    "mongodb+srv://sijinni:ddui2008@cluster0.k6kcviv.mongodb.net/meetups?retryWrites=true&w=majority"
+  );
+  const db = client.db();
+
+  const meetupsCollection = db.collection("meetups");
+
+  const meetup = await meetupsCollection.findOne({
+    _id: ObjectId(context.params.meetupId),
+  });
+
+  client.close();
+
+  return {
+    props: {
+      meetup: {
+        id: meetup._id.toString(),
+        title: meetup.title,
+        address: meetup.address,
+        image: meetup.image,
+        description: meetup.description,
+      },
+    },
+  };
+}
 
 export default MeetupDetail;

@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import classes from "./MainNavigation.module.css";
+import classes from "./Header.module.css";
 
-function MainNavigation() {
+function Header() {
   const router = useRouter();
 
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>React Meetups</div>
-      <nav>
+      <Link href="/">Meetups</Link>
+      <nav className={classes.nav}>
         <Link href="/">
           <a className={router.pathname === "/" ? classes.active : ""}>
             All Meetups
@@ -19,7 +19,7 @@ function MainNavigation() {
           <a
             className={router.pathname === "/new-meetup" ? classes.active : ""}
           >
-            Add New Meetup
+            Add Meetup
           </a>
         </Link>
       </nav>
@@ -27,4 +27,4 @@ function MainNavigation() {
   );
 }
 
-export default MainNavigation;
+export default Header;

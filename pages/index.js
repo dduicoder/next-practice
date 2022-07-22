@@ -1,33 +1,55 @@
+import { Fragment } from "react";
+import Head from "next/head";
+import { MongoClient } from "mongodb";
+
 import MeetupList from "../components/meetups/MeetupList";
 
-const DUMMY_MEETUP = [
-  {
-    id: "m1",
-    title: "Game",
-    image:
-      "https://www.cgmagonline.com/wp-content/uploads/2021/05/news-discord-celebrated-6-years-yesterday.jpg",
-    address: "Online",
-    description: "Minecraft, Fortnite",
-  },
-  {
-    id: "m2",
-    title: "Fish",
-    image:
-      "https://www.takemefishing.org/getmedia/bde1c54e-3a5f-4aa3-af1f-f2b99cd6f38d/best-fishing-times-facebook.jpg?width=1200&height=630&ext=.jpg",
-    address: "Somewhere",
-    description: "Lets Fish!",
-  },
-];
-
-const HomePage = (props) => {
-  return <MeetupList meetups={props.meetups} />;
+const HomePage = ({ meetups }) => {
+  return (
+    <Fragment>
+      <Head>
+        <title>Meetups</title>
+        <meta name="description" content="Meetup with the world!" />
+      </Head>
+      <MeetupList meetups={meetups} />
+    </Fragment>
+  );
 };
 
+// export const getServerSideProps = async (context) => {
+//   const req = context.req;
+//   const res = context.res;
+
+//   return {
+//     props: {
+//       meetups: DUMMY_MEETUP,
+//     },
+//   };
+// };
+
 export const getStaticProps = async () => {
+  const client = await MongoClient.connect(
+    "mongodb+srv://sijinni:ddui2008@cluster0.k6kcviv.mongodb.net/meetups?retryWrites=true&w=majority"
+  );
+  const db = client.db();
+
+  const meetupsCollection = db.collection("meetups");
+
+  const meetups = await meetupsCollection.find().toArray();
+
+  client.close();
+
   return {
     props: {
-      meetups: DUMMY_MEETUP,
+      meetups: meetups.map((meetup) => ({
+        title: meetup.title,
+        address: meetup.address,
+        image: meetup.image,
+        description: meetup.description,
+        id: meetup._id.toString(),
+      })),
     },
+    revalidate: 1,
   };
 };
 

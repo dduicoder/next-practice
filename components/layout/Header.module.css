@@ -1,0 +1,35 @@
+.header {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  color: #f7323f;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  padding: 0 10%;
+  position: sticky;
+  backdrop-filter: blur(1rem);
+  top: 0;
+  z-index: 1;
+  transition: all 0.25s ease-in-out;
+}
+
+.header > a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav a {
+  margin-left: 1rem;
+  font-size: 1rem;
+  transition: all 0.25s ease-in-out;
+  padding: 5px 0;
+  border-bottom: 1px solid transparent;
+}
+
+.nav a:hover,
+.nav a:active,
+.nav a.active {
+  border-color: #f7323f;
+}

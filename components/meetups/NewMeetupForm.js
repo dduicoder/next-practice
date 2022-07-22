@@ -27,7 +27,7 @@ function NewMeetupForm({ onAddMeetup }) {
   }
 
   return (
-    <form className={`card ${classes.form}`} onSubmit={submitHandler}>
+    <form className={classes.form} onSubmit={submitHandler}>
       <label htmlFor="title">Meetup Title</label>
       <input type="text" required id="title" ref={titleInputRef} />
       <label htmlFor="image">Meetup Image</label>

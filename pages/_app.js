@@ -1,11 +1,11 @@
 import { Fragment } from "react";
-import MainNavigation from "../components/layout/MainNavigation";
+import Header from "../components/layout/Header";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
     <Fragment>
-      <MainNavigation />
+      <Header />
       <main>
         <Component {...pageProps} />
       </main>
