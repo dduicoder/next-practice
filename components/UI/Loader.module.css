@@ -1,0 +1,16 @@
+.loader {
+  height: 4px;
+  background-color: #abddfc;
+  animation: load 1s ease-in-out infinite;
+  position: fixed;
+  top: 4rem;
+}
+
+@keyframes load {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

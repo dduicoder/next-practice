@@ -16,17 +16,6 @@ const HomePage = ({ meetups }) => {
   );
 };
 
-// export const getServerSideProps = async (context) => {
-//   const req = context.req;
-//   const res = context.res;
-
-//   return {
-//     props: {
-//       meetups: DUMMY_MEETUP,
-//     },
-//   };
-// };
-
 export const getStaticProps = async () => {
   const client = await MongoClient.connect(
     "mongodb+srv://sijinni:ddui2008@cluster0.k6kcviv.mongodb.net/meetups?retryWrites=true&w=majority"
