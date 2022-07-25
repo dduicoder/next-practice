@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Head from "next/head";
 import { MongoClient, ObjectId } from "mongodb";
 
-import Meetup from "../../components/meetups/Meetup";
+import Meetup from "../components/meetups/Meetup";
 
 const MeetupDetail = ({ meetup }) => {
   return (

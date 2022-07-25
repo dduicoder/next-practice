@@ -10,11 +10,17 @@
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
 }
 
-.item img {
+.image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+}
+
+.item img {
+  height: 100%;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .item h3 {

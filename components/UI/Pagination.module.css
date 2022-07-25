@@ -1,0 +1,18 @@
+.pagination {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pagination button {
+  border: none;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.incurrent {
+  color: rgba(0, 0, 0, 0.5);
+}
