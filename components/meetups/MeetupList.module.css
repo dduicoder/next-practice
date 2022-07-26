@@ -1,10 +1,14 @@
 .list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 2rem;
+}
+
+.control {
+  display: flex;
+  gap: 1rem;
+  white-space: nowrap;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 600px) {

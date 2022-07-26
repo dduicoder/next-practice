@@ -3,18 +3,13 @@ import { useRouter } from "next/router";
 
 import classes from "./Header.module.css";
 
-function Header() {
+const Header = () => {
   const router = useRouter();
 
   return (
     <header className={classes.header}>
       <Link href="/">Meetups</Link>
       <nav className={classes.nav}>
-        <Link href="/search">
-          <a className={router.pathname === "/search" ? classes.active : ""}>
-            Search
-          </a>
-        </Link>
         <Link href="/">
           <a className={router.pathname === "/" ? classes.active : ""}>
             All Meetups
@@ -30,6 +25,6 @@ function Header() {
       </nav>
     </header>
   );
-}
+};
 
 export default Header;
