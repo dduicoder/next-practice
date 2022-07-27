@@ -1,0 +1,21 @@
+.notFound {
+  text-align: center;
+}
+
+.notFound p {
+  margin-bottom: 2rem;
+}
+
+.notFound a {
+  color: #f7323f;
+  border: 1px solid #f7323f;
+  transition: all 0.25s ease-in-out;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.notFound a:hover,
+.notFound a:active {
+  background-color: #f7323f;
+  color: white;
+}

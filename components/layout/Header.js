@@ -8,10 +8,14 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <Link href="/">Meetups</Link>
+      <Link href="/meetups">Meetups</Link>
       <nav className={classes.nav}>
-        <Link href="/">
-          <a className={router.pathname === "/" ? classes.active : ""}>
+        <Link href="/meetups">
+          <a
+            className={
+              router.pathname.startsWith("/meetups") ? classes.active : ""
+            }
+          >
             All Meetups
           </a>
         </Link>

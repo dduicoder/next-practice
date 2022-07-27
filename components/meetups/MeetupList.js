@@ -17,9 +17,7 @@ const MeetupList = ({ meetups }) => {
 
   const options = ["title", "address", "description"];
 
-  let sortedMeetups;
-
-  sortedMeetups = meetups.filter((meetup) => {
+  const filteredMeetups = meetups.filter((meetup) => {
     const current =
       searchOption === "title"
         ? meetup.title
@@ -47,22 +45,22 @@ const MeetupList = ({ meetups }) => {
           text={"Search: "}
         />
       </div>
-      {sortedMeetups.length !== 0 ? (
+      {filteredMeetups.length !== 0 ? (
         <Fragment>
           <ul className={classes.list}>
-            {sortedMeetups.slice(offset, offset + limit).map((meetup) => (
+            {filteredMeetups.slice(offset, offset + limit).map((meetup) => (
               <MeetupItem meetup={meetup} key={meetup.id} id={meetup.id} />
             ))}
           </ul>
           <Pagination
-            total={sortedMeetups.length}
+            total={filteredMeetups.length}
             limit={limit}
             page={page}
             setPage={setPage}
           />
         </Fragment>
       ) : (
-        <p style={{ textAlign: "center" }}>- No Result -</p>
+        <p style={{ textAlign: "center", marginTop: "3rem" }}>- No Result -</p>
       )}
     </Fragment>
   );

@@ -11,7 +11,7 @@ const MeetupItem = ({ meetup, id }) => {
     <li
       className={classes.item}
       onClick={() => {
-        router.push("/" + id);
+        router.push("meetups/" + id);
       }}
     >
       <div className={classes.image}>
