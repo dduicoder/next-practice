@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Loader from "../components/UI/Loader";
+
 import "../styles/globals.css";
 
 const MyApp = ({ Component, pageProps }) => {

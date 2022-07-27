@@ -1,5 +1,6 @@
-import Head from "next/head";
 import { Fragment } from "react";
+import Head from "next/head";
+
 import NotFound from "../components/layout/NotFound";
 
 const Page = () => {
