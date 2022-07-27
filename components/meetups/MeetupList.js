@@ -18,13 +18,13 @@ const MeetupList = ({ meetups }) => {
   const options = ["title", "address", "description"];
 
   const filteredMeetups = meetups.filter((meetup) => {
-    const current =
+    const value =
       searchOption === "title"
         ? meetup.title
         : searchOption === "address"
         ? meetup.address
         : meetup.description;
-    if (current.toLowerCase().includes(search.toLowerCase())) {
+    if (value.toLowerCase().includes(search.toLowerCase())) {
       return meetup;
     }
     return null;

@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import NewMeetupForm from "../../components/meetups/NewMeetupForm";
+import MeetupForm from "../../components/meetups/MeetupForm";
 
 const NewMeetupPage = () => {
   const router = useRouter();
@@ -28,7 +28,7 @@ const NewMeetupPage = () => {
           content="Add your own meetup and meetup with the world."
         />
       </Head>
-      <NewMeetupForm onAddMeetup={addMeetup} />
+      <MeetupForm onAddMeetup={addMeetup} />
     </Fragment>
   );
 };

@@ -1,8 +1,8 @@
 import { useRef } from "react";
 
-import classes from "./NewMeetupForm.module.css";
+import classes from "./MeetupForm.module.css";
 
-const NewMeetupForm = ({ onAddMeetup }) => {
+const MeetupForm = ({ onAddMeetup }) => {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const addressInputRef = useRef();
@@ -11,19 +11,12 @@ const NewMeetupForm = ({ onAddMeetup }) => {
   function submitHandler(event) {
     event.preventDefault();
 
-    const enteredTitle = titleInputRef.current.value;
-    const enteredImage = imageInputRef.current.value;
-    const enteredAddress = addressInputRef.current.value;
-    const enteredDescription = descriptionInputRef.current.value;
-
-    const meetupData = {
-      title: enteredTitle,
-      image: enteredImage,
-      address: enteredAddress,
-      description: enteredDescription,
-    };
-
-    onAddMeetup(meetupData);
+    onAddMeetup({
+      title: titleInputRef.current.value,
+      image: imageInputRef.current.value,
+      address: addressInputRef.current.value,
+      description: descriptionInputRef.current.value,
+    });
   }
 
   return (
@@ -48,4 +41,4 @@ const NewMeetupForm = ({ onAddMeetup }) => {
   );
 };
 
-export default NewMeetupForm;
+export default MeetupForm;

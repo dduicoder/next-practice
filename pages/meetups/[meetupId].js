@@ -57,7 +57,7 @@ export const getStaticProps = async (context) => {
           title: "Not found",
           image: null,
           address: null,
-          description: "Could not find meetup",
+          description: "Could not find meetup.",
         },
       },
     };

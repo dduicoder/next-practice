@@ -6,12 +6,10 @@ import Footer from "../components/layout/Footer";
 import Loader from "../components/UI/Loader";
 import "../styles/globals.css";
 
-// 404 페이지
-
 const MyApp = ({ Component, pageProps }) => {
-  const router = useRouter();
-
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
 
   useEffect(() => {
     const handleStart = (url) => url !== router.asPath && setLoading(true);
