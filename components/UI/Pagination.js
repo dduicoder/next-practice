@@ -1,10 +1,6 @@
 import classes from "./Pagination.module.css";
 
 const Pagination = ({ total, limit, page, setPage }) => {
-  if (total === 0 || limit === 0) {
-    return;
-  }
-
   const numPages = Math.ceil(total / limit);
 
   return (

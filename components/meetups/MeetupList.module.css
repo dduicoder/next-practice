@@ -1,6 +1,6 @@
 .list {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
 }
 
@@ -8,11 +8,13 @@
   display: flex;
   gap: 1rem;
   white-space: nowrap;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f7323f;
   margin-bottom: 2rem;
 }
 
 @media (max-width: 600px) {
   .list {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
   }
 }

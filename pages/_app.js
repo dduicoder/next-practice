@@ -7,13 +7,13 @@ import Loader from "../components/UI/Loader";
 
 import "../styles/globals.css";
 
-const MyApp = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }) => {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
   useEffect(() => {
-    const handleStart = (url) => url !== router.asPath && setLoading(true);
+    const handleStart = () => setLoading(true);
     const handleComplete = () => setLoading(false);
 
     router.events.on("routeChangeStart", handleStart);
@@ -33,4 +33,4 @@ const MyApp = ({ Component, pageProps }) => {
   );
 };
 
-export default MyApp;
+export default App;

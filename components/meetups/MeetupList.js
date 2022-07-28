@@ -35,7 +35,10 @@ const MeetupList = ({ meetups }) => {
       <div className={classes.control}>
         <input
           placeholder="Search..."
-          onChange={(event) => setSearch(event.target.value)}
+          onChange={(event) => {
+            setSearch(event.target.value);
+            setPage(1);
+          }}
           value={search}
         />
         <Select

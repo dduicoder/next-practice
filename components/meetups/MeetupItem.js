@@ -3,9 +3,9 @@ import { useRouter } from "next/router";
 import classes from "./MeetupItem.module.css";
 
 const MeetupItem = ({ meetup, id }) => {
-  const router = useRouter();
-
   const { title, image, address, description } = meetup;
+
+  const router = useRouter();
 
   return (
     <li
@@ -14,9 +14,7 @@ const MeetupItem = ({ meetup, id }) => {
         router.push("meetups/" + id);
       }}
     >
-      <div className={classes.image}>
-        <img src={image} alt={title} />
-      </div>
+      <img src={image} alt={title} />
       <h3>{title}</h3>
       <address>{address}</address>
       <p>

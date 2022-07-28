@@ -3,6 +3,8 @@
 * {
   box-sizing: border-box;
   font-family: "Noto Sans KR", sans-serif;
+  background: transparent;
+  color: inherit;
 }
 
 body {
@@ -24,7 +26,6 @@ ul {
 
 a {
   text-decoration: none;
-  color: inherit;
 }
 
 input,
@@ -35,7 +36,6 @@ textarea {
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid #dedede;
-  display: block;
   width: 100%;
   transition: all 0.25s ease-in-out;
 }
@@ -50,7 +50,6 @@ textarea:focus {
   cursor: pointer;
   color: #f7323f;
   border: 1px solid #f7323f;
-  background-color: transparent;
   transition: all 0.25s ease-in-out;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;

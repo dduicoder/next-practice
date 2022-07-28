@@ -8,7 +8,7 @@ const MeetupForm = ({ onAddMeetup }) => {
   const addressInputRef = useRef();
   const descriptionInputRef = useRef();
 
-  function submitHandler(event) {
+  const submitHandler = (event) => {
     event.preventDefault();
 
     onAddMeetup({
@@ -17,7 +17,7 @@ const MeetupForm = ({ onAddMeetup }) => {
       address: addressInputRef.current.value,
       description: descriptionInputRef.current.value,
     });
-  }
+  };
 
   return (
     <form className={classes.form} onSubmit={submitHandler}>

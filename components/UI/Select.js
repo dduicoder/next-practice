@@ -5,6 +5,7 @@ import classes from "./Select.module.css";
 
 const Select = ({ value, setValue, list, text }) => {
   const [showSelect, setShowSelect] = useState(false);
+
   const wrapperRef = useRef();
 
   useEffect(() => {

@@ -1,6 +1,7 @@
 .item {
   border-radius: 1rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  border: 1px solid whitesmoke;
   text-align: center;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
@@ -10,26 +11,30 @@
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
 }
 
-.image {
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
+.item img {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
-.item img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+.item h3,
+.item address,
+.item p {
+  margin: auto;
+  max-width: 15rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .item h3 {
   font-size: 1.25rem;
-  margin: 1.25rem;
+  margin: 1rem auto;
 }
 
 .item p {
-  margin: 0.5rem auto 1.25rem auto;
-  max-width: 75%;
+  margin: 0.5rem auto 1rem auto;
   color: rgba(0, 0, 0, 0.75);
 }
