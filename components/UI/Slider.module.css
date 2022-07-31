@@ -1,0 +1,16 @@
+.container {
+  overflow: hidden;
+}
+
+.slider {
+  transition: all 0.25s ease-in-out;
+}
+
+.slider img {
+  border-radius: 1rem;
+  aspect-ratio: 16 / 9;
+}
+
+.container footer {
+  margin: 2rem auto;
+}

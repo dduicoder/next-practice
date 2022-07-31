@@ -5,7 +5,9 @@ const Pagination = ({ total, limit, page, setPage }) => {
 
   return (
     <footer className={classes.pagination}>
-      {page !== 1 && <button onClick={() => setPage(page - 1)}>&lt;</button>}
+      <button onClick={() => setPage(page === 1 ? numPages : page - 1)}>
+        &lt;
+      </button>
       {Array(numPages)
         .fill()
         .map((_, i) => (
@@ -17,9 +19,9 @@ const Pagination = ({ total, limit, page, setPage }) => {
             {i + 1}
           </button>
         ))}
-      {page !== numPages && (
-        <button onClick={() => setPage(page + 1)}>&gt;</button>
-      )}
+      <button onClick={() => setPage(page === numPages ? 1 : page + 1)}>
+        &gt;
+      </button>
     </footer>
   );
 };

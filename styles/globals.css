@@ -14,7 +14,7 @@ body {
 main {
   margin: 3rem auto;
   padding: 0 1.5rem;
-  min-height: 60vh;
+  min-height: calc(100vh - 10rem);
   width: min(100%, 45rem);
 }
 
