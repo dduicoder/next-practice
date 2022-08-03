@@ -1,6 +1,5 @@
-import { Fragment } from "react";
-import Head from "next/head";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 import MeetupForm from "../components/meetups/MeetupForm";
 
@@ -20,7 +19,7 @@ const NewMeetupPage = () => {
   };
 
   return (
-    <Fragment>
+    <>
       <Head>
         <title>Meetups - Add meetup</title>
         <meta
@@ -29,7 +28,7 @@ const NewMeetupPage = () => {
         />
       </Head>
       <MeetupForm onAddMeetup={addMeetup} />
-    </Fragment>
+    </>
   );
 };
 

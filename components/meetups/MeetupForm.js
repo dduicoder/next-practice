@@ -1,38 +1,35 @@
-import { useRef } from "react";
-
 import classes from "./MeetupForm.module.css";
 
 const MeetupForm = ({ onAddMeetup }) => {
-  const titleInputRef = useRef();
-  const imageInputRef = useRef();
-  const addressInputRef = useRef();
-  const descriptionInputRef = useRef();
-
   const submitHandler = (event) => {
     event.preventDefault();
 
+    const { title, image, address, description } = Object.fromEntries(
+      new FormData(event.target)
+    );
+
     onAddMeetup({
-      title: titleInputRef.current.value,
-      image: imageInputRef.current.value,
-      address: addressInputRef.current.value,
-      description: descriptionInputRef.current.value,
+      title,
+      image,
+      address,
+      description,
     });
   };
 
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <label htmlFor="title">Meetup Title</label>
-      <input type="text" required id="title" ref={titleInputRef} />
+      <input name="title" type="text" id="title" required />
       <label htmlFor="image">Meetup Image</label>
-      <input type="url" required id="image" ref={imageInputRef} />
+      <input name="image" type="url" id="image" required />
       <label htmlFor="address">Address</label>
-      <input type="text" required id="address" ref={addressInputRef} />
+      <input name="address" type="text" id="address" required />
       <label htmlFor="description">Description</label>
       <textarea
+        name="description"
         id="description"
         required
         rows="5"
-        ref={descriptionInputRef}
       ></textarea>
       <div className={classes.action}>
         <button className="btn">Add Meetup</button>

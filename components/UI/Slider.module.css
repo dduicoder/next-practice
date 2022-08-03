@@ -9,6 +9,7 @@
 }
 
 .slider img {
+  cursor: pointer;
   aspect-ratio: 16 / 9;
   border-radius: 1rem;
   object-fit: cover;
@@ -17,6 +18,10 @@
 
 .mainImg {
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25);
+}
+
+.container button {
+  background-color: transparent;
 }
 
 .arrow {

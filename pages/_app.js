@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 import Header from "../components/layout/Header";
@@ -22,14 +22,14 @@ const App = ({ Component, pageProps }) => {
   });
 
   return (
-    <Fragment>
+    <>
       <Header />
       {loading && <Loader />}
       <main>
         <Component {...pageProps} />
       </main>
       <Footer />
-    </Fragment>
+    </>
   );
 };
 

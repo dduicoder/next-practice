@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
 import MeetupItem from "./MeetupItem";
 import Pagination from "../UI/Pagination";
@@ -31,7 +31,7 @@ const MeetupList = ({ meetups }) => {
   });
 
   return (
-    <Fragment>
+    <>
       <div className={classes.control}>
         <input
           placeholder="Search..."
@@ -49,7 +49,7 @@ const MeetupList = ({ meetups }) => {
         />
       </div>
       {filteredMeetups.length !== 0 ? (
-        <Fragment>
+        <>
           <ul className={classes.list}>
             {filteredMeetups.slice(offset, offset + limit).map((meetup) => (
               <MeetupItem meetup={meetup} key={meetup.id} id={meetup.id} />
@@ -61,11 +61,11 @@ const MeetupList = ({ meetups }) => {
             page={page}
             setPage={setPage}
           />
-        </Fragment>
+        </>
       ) : (
         <p style={{ textAlign: "center", marginTop: "3rem" }}>- No Result -</p>
       )}
-    </Fragment>
+    </>
   );
 };
 

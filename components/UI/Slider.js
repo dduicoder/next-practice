@@ -1,8 +1,11 @@
 import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/dist/client/router";
 
 import classes from "./Slider.module.css";
 
 const Slider = ({ imgs }) => {
+  const router = useRouter();
+
   const [index, setIndex] = useState(1);
 
   const timeoutRef = useRef(null);
@@ -44,6 +47,7 @@ const Slider = ({ imgs }) => {
               src={img}
               style={{ width: `${100 / total}%` }}
               className={index === i + 1 ? classes.mainImg : ""}
+              onClick={() => router.push("/meetups")}
             />
           );
         })}

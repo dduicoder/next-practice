@@ -3,7 +3,6 @@
 * {
   box-sizing: border-box;
   font-family: "Noto Sans KR", sans-serif;
-  background: transparent;
 }
 
 body {
@@ -55,6 +54,7 @@ textarea:focus {
   font: inherit;
   color: #f7323f;
   border: 1px solid #f7323f;
+  background-color: transparent;
   transition: all 0.25s ease-in-out;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
