@@ -43,10 +43,9 @@ const Slider = ({ imgs }) => {
         {imgs.map((img, i) => {
           return (
             <img
-              key={img}
+              key={i}
               src={img}
               style={{ width: `${100 / total}%` }}
-              className={index === i + 1 ? classes.mainImg : ""}
               onClick={() => router.push("/meetups")}
             />
           );

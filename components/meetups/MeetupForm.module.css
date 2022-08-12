@@ -20,6 +20,16 @@
   border-radius: 1rem;
 }
 
+.invalid {
+  border-color: #ff8383 !important;
+  background-color: #fff3f3;
+}
+
+.invalid:focus {
+  border-color: #ffd298 !important;
+  background-color: #fff8ee;
+}
+
 .action {
   text-align: right;
 }
