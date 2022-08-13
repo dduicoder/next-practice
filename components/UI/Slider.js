@@ -4,6 +4,13 @@ import { useRouter } from "next/dist/client/router";
 import classes from "./Slider.module.css";
 
 const Slider = ({ imgs }) => {
+  if (imgs.length === 1) {
+    return (
+      <section className={classes.container}>
+        <img src={imgs[0]} />
+      </section>
+    );
+  }
   const router = useRouter();
 
   const [index, setIndex] = useState(1);
@@ -22,7 +29,7 @@ const Slider = ({ imgs }) => {
     resetTimeout();
     timeoutRef.current = setTimeout(() => {
       setIndex((prevIndex) => (prevIndex === total ? 1 : prevIndex + 1));
-    }, 3300);
+    }, 2500);
 
     return () => {
       resetTimeout();
@@ -41,14 +48,7 @@ const Slider = ({ imgs }) => {
         }}
       >
         {imgs.map((img, i) => {
-          return (
-            <img
-              key={i}
-              src={img}
-              style={{ width: `${100 / total}%` }}
-              onClick={() => router.push("/meetups")}
-            />
-          );
+          return <img key={i} src={img} style={{ width: `${100 / total}%` }} />;
         })}
       </div>
       <button

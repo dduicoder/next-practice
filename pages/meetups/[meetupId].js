@@ -16,7 +16,7 @@ const MeetupDetail = ({ meetup }) => {
       ) : (
         <Meetup
           title={meetup.title}
-          image={meetup.image}
+          images={meetup.images}
           address={meetup.address}
           description={meetup.description}
         />
@@ -54,7 +54,7 @@ export const getStaticProps = async (context) => {
         meetup: {
           id: "notFound",
           title: "Not found",
-          image: null,
+          images: null,
           address: null,
           description: "Could not find meetup.",
         },
@@ -80,8 +80,8 @@ export const getStaticProps = async (context) => {
       meetup: {
         id: meetup._id.toString(),
         title: meetup.title,
+        images: meetup.images,
         address: meetup.address,
-        image: meetup.image,
         description: meetup.description,
       },
     },

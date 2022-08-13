@@ -11,6 +11,11 @@
   font-weight: bold;
 }
 
+.image {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .form textarea::-webkit-scrollbar {
   width: 5px;
 }
