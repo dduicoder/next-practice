@@ -33,6 +33,7 @@ export const getStaticProps = async () => {
         id: meetup._id.toString(),
         title: meetup.title,
         images: meetup.images,
+        date: meetup.date,
         address: meetup.address,
         description: meetup.description,
       })),

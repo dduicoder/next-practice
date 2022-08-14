@@ -1,10 +1,11 @@
 import { useState } from "react";
+
 import classes from "./MeetupForm.module.css";
 
 const MeetupForm = ({ onAddMeetup }) => {
   const [imageFields, setImageFields] = useState([""]);
 
-  const handleFormChange = (text, i) => {
+  const changeField = (text, i) => {
     setImageFields((prevData) => {
       let data = [...prevData];
       data[i] = text;
@@ -29,13 +30,14 @@ const MeetupForm = ({ onAddMeetup }) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    const { title, address, description } = Object.fromEntries(
+    const { title, date, address, description } = Object.fromEntries(
       new FormData(event.target)
     );
 
     onAddMeetup({
       title,
       images: imageFields,
+      date,
       address,
       description,
     });
@@ -50,11 +52,11 @@ const MeetupForm = ({ onAddMeetup }) => {
         return (
           <div className={classes.image} key={i}>
             <input
-              onChange={(e) => handleFormChange(e.target.value, i)}
+              onChange={(e) => changeField(e.target.value, i)}
               value={text}
-              id={`image-input${i}`}
-              placeholder="Input image url"
               required
+              type="url"
+              id={`image-input${i}`}
             />
             <button
               className="btn"
@@ -65,9 +67,11 @@ const MeetupForm = ({ onAddMeetup }) => {
           </div>
         );
       })}
-      <label htmlFor="address">Address</label>
+      <label htmlFor="date">Meetup Date</label>
+      <input required name="date" type="date" id="date" />
+      <label htmlFor="address">Meetup Address</label>
       <input required name="address" type="text" id="address" />
-      <label htmlFor="description">Description</label>
+      <label htmlFor="description">Meetup Description</label>
       <textarea
         required
         name="description"

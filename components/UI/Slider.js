@@ -1,19 +1,15 @@
 import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/dist/client/router";
+import { CSSTransition } from "react-transition-group";
+
+import Backdrop from "./Backdrop";
+import Portal from "./Portal";
 
 import classes from "./Slider.module.css";
 
 const Slider = ({ imgs }) => {
-  if (imgs.length === 1) {
-    return (
-      <section className={classes.container}>
-        <img src={imgs[0]} />
-      </section>
-    );
-  }
-  const router = useRouter();
-
   const [index, setIndex] = useState(1);
+  const [showImg, setShowImg] = useState(false);
+  const [imgUrl, setImgUrl] = useState("");
 
   const timeoutRef = useRef(null);
 
@@ -38,6 +34,21 @@ const Slider = ({ imgs }) => {
 
   return (
     <section className={classes.container}>
+      <Backdrop show={showImg} close={() => setShowImg(false)} />
+      <Portal>
+        <CSSTransition
+          mountOnEnter
+          unmountOnExit
+          in={showImg}
+          timeout={{ enter: 250, exit: 250 }}
+          classNames={{
+            enterActive: classes.open,
+            exitActive: classes.close,
+          }}
+        >
+          <img src={imgUrl} className={classes.focusedImg} />
+        </CSSTransition>
+      </Portal>
       <div
         className={classes.slider}
         style={{
@@ -48,7 +59,17 @@ const Slider = ({ imgs }) => {
         }}
       >
         {imgs.map((img, i) => {
-          return <img key={i} src={img} style={{ width: `${100 / total}%` }} />;
+          return (
+            <img
+              onClick={() => {
+                setShowImg(true);
+                setImgUrl(img);
+              }}
+              key={i}
+              src={img}
+              style={{ width: `${100 / total}%` }}
+            />
+          );
         })}
       </div>
       <button
@@ -68,7 +89,7 @@ const Slider = ({ imgs }) => {
           .fill()
           .map((_, i) => (
             <button
-              key={i + 1}
+              key={i}
               onClick={() => setIndex(i + 1)}
               className={index === i + 1 ? classes.current : ""}
             />

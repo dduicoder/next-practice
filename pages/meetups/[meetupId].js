@@ -11,16 +11,7 @@ const MeetupDetail = ({ meetup }) => {
         <title>{"Meetups - " + meetup.title}</title>
         <meta name="description" content={meetup.description} />
       </Head>
-      {meetup.id === "notFound" ? (
-        <NotFound />
-      ) : (
-        <Meetup
-          title={meetup.title}
-          images={meetup.images}
-          address={meetup.address}
-          description={meetup.description}
-        />
-      )}
+      {meetup.id === "notFound" ? <NotFound /> : <Meetup meetup={meetup} />}
     </>
   );
 };
@@ -55,6 +46,7 @@ export const getStaticProps = async (context) => {
           id: "notFound",
           title: "Not found",
           images: null,
+          date: null,
           address: null,
           description: "Could not find meetup.",
         },
@@ -81,6 +73,7 @@ export const getStaticProps = async (context) => {
         id: meetup._id.toString(),
         title: meetup.title,
         images: meetup.images,
+        date: meetup.date,
         address: meetup.address,
         description: meetup.description,
       },

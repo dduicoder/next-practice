@@ -7,7 +7,9 @@ const NotFound = () => {
     <section className={classes.notFound}>
       <h3>404 Page not found</h3>
       <p>Could not find page.</p>
-      <Link href="/meetups">Home</Link>
+      <Link href="/meetups">
+        <button className="btn">Home</button>
+      </Link>
     </section>
   );
 };

@@ -8,7 +8,7 @@ import classes from "./MeetupList.module.css";
 
 const MeetupList = ({ meetups }) => {
   const [page, setPage] = useState(1);
-  const [search, setSearch] = useState("");
+  const [searchText, setSearchText] = useState("");
   const [searchOption, setSearchOption] = useState("title");
 
   const limit = 10;
@@ -24,7 +24,7 @@ const MeetupList = ({ meetups }) => {
         : searchOption === "address"
         ? meetup.address
         : meetup.description;
-    if (value.toLowerCase().includes(search.toLowerCase())) {
+    if (value.toLowerCase().includes(searchText.toLowerCase())) {
       return meetup;
     }
     return null;
@@ -36,10 +36,10 @@ const MeetupList = ({ meetups }) => {
         <input
           placeholder="Search..."
           onChange={(event) => {
-            setSearch(event.target.value);
+            setSearchText(event.target.value);
             setPage(1);
           }}
-          value={search}
+          value={searchText}
         />
         <Select
           value={searchOption}
@@ -52,7 +52,7 @@ const MeetupList = ({ meetups }) => {
         <>
           <ul className={classes.list}>
             {filteredMeetups.slice(offset, offset + limit).map((meetup) => (
-              <MeetupItem meetup={meetup} key={meetup.id} id={meetup.id} />
+              <MeetupItem meetup={meetup} key={meetup.id} />
             ))}
           </ul>
           <Pagination

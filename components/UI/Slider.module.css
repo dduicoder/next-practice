@@ -11,10 +11,47 @@
 }
 
 .container img {
+  cursor: pointer;
   aspect-ratio: 16 / 9;
   border-radius: 1rem;
   object-fit: cover;
   transition: all 0.5s ease-in-out;
+}
+
+.focusedImg {
+  border-radius: 2rem;
+  width: min(50rem, 100%);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.open {
+  animation: fade-in 0.25s ease-in-out forwards;
+}
+
+.close {
+  animation: fade-out 0.25s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .container button {

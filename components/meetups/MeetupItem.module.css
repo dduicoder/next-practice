@@ -2,6 +2,7 @@
   border-radius: 1rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   border: 1px solid whitesmoke;
+  padding-bottom: 1rem;
   text-align: center;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
@@ -22,10 +23,8 @@
 .item h3,
 .item address,
 .item p {
-  margin: auto;
   max-width: 15rem;
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
 }
 
@@ -34,7 +33,14 @@
   margin: 1rem auto;
 }
 
+.item address {
+  margin: 0.25rem auto;
+}
+
 .item p {
-  margin: 0.5rem auto 1rem auto;
-  color: rgba(0, 0, 0, 0.75);
+  margin: 0 auto;
+}
+
+.item p:first-of-type {
+  opacity: 0.75;
 }

@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Loader from "../components/UI/Loader";
 
 import "../styles/globals.css";
+
+// 인덱스 페이지?
+// form 자동 required 처리
 
 const App = ({ Component, pageProps }) => {
   const [loading, setLoading] = useState(false);
@@ -23,12 +28,15 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
-      <Header />
-      {loading && <Loader />}
-      <main>
-        <Component {...pageProps} />
-      </main>
-      <Footer />
+      <div id="overlays"></div>
+      <>
+        <Header />
+        {loading && <Loader />}
+        <main>
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+      </>
     </>
   );
 };

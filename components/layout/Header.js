@@ -1,14 +1,40 @@
-import Link from "next/link";
+import { useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+
+import Backdrop from "../UI/Backdrop";
+import SideNavigation from "./SideNavigation";
 
 import classes from "./Header.module.css";
 
 const Header = () => {
+  const [showSide, setShowSide] = useState(false);
   const router = useRouter();
 
   return (
     <header className={classes.header}>
+      <Backdrop
+        show={showSide}
+        close={() => {
+          setShowSide(false);
+        }}
+      />
+      <SideNavigation
+        show={showSide}
+        close={() => {
+          setShowSide(false);
+        }}
+      />
       <Link href="/meetups">Meetups</Link>
+      <FontAwesomeIcon
+        icon={faBars}
+        onClick={() => {
+          setShowSide(true);
+        }}
+      />
       <nav className={classes.nav}>
         <Link href="/meetups">
           <a

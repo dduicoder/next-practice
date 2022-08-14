@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import classes from "./Chart.module.css";
 
 const Chart = ({ xTotal, yTotal, datas }) => {

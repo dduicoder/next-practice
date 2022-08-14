@@ -9,4 +9,17 @@
 .detail p {
   overflow: hidden;
   text-overflow: ellipsis;
+  margin: 0;
+}
+
+.detail h1 {
+  margin: 1.5rem 0;
+}
+
+.detail address {
+  margin: 0.75rem 0;
+}
+
+.detail p:first-of-type {
+  opacity: 0.75;
 }

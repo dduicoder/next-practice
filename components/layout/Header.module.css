@@ -9,7 +9,7 @@
   justify-content: space-between;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 3;
   background-color: transparent;
   backdrop-filter: blur(1rem);
 }
@@ -31,4 +31,18 @@
 .nav a:active,
 .nav a.active {
   border-color: #f7323f;
+}
+
+.header > svg {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .header > svg {
+    display: block;
+  }
+  .nav {
+    display: none;
+  }
 }

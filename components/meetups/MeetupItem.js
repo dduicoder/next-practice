@@ -2,8 +2,8 @@ import { useRouter } from "next/router";
 
 import classes from "./MeetupItem.module.css";
 
-const MeetupItem = ({ meetup, id }) => {
-  const { title, images, address, description } = meetup;
+const MeetupItem = ({ meetup }) => {
+  const { id, title, images, date, address, description } = meetup;
 
   const router = useRouter();
 
@@ -16,6 +16,7 @@ const MeetupItem = ({ meetup, id }) => {
     >
       <img src={images[0]} alt={title} />
       <h3>{title}</h3>
+      <p>{date}</p>
       <address>{address}</address>
       <p>
         {description.length > 50

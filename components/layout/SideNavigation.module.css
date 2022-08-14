@@ -1,0 +1,79 @@
+.nav {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(20rem, 55vw);
+  padding: 1rem;
+  z-index: 10;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height: 2.5rem;
+  position: relative;
+}
+
+.control span {
+  position: absolute;
+  top: 0;
+  font-weight: bold;
+}
+
+.control :first-child {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.control :last-child {
+  right: 1rem;
+  cursor: pointer;
+}
+
+.nav button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+}
+
+.active {
+  background-color: #f7323f !important;
+  color: white !important;
+}
+
+.open {
+  animation: pop-left 0.25s ease-in-out forwards;
+}
+
+.close {
+  animation: pop-right 0.25s ease-in-out forwards;
+}
+
+@keyframes pop-left {
+  from {
+    opacity: 0;
+    right: -55vw;
+  }
+  to {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+@keyframes pop-right {
+  from {
+    opacity: 1;
+    right: 0;
+  }
+  to {
+    opacity: 0;
+    right: -55vw;
+  }
+}

@@ -4,13 +4,13 @@ const Pagination = ({ total, limit, page, setPage }) => {
   const numPages = Math.ceil(total / limit);
 
   return (
-    <footer className={classes.pagination}>
+    <section className={classes.pagination}>
       {page !== 1 && <button onClick={() => setPage(page - 1)}>&lt;</button>}
       {Array(numPages)
         .fill()
         .map((_, i) => (
           <button
-            key={i + 1}
+            key={i}
             onClick={() => setPage(i + 1)}
             className={page === i + 1 ? "" : classes.incurrent}
           >
@@ -20,7 +20,7 @@ const Pagination = ({ total, limit, page, setPage }) => {
       {page !== numPages && (
         <button onClick={() => setPage(page + 1)}>&gt;</button>
       )}
-    </footer>
+    </section>
   );
 };
 

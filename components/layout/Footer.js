@@ -6,8 +6,12 @@ const Footer = () => {
       <div className={classes.control}>
         <section>
           <span>Links</span>
-          <a href="https://react-http-2cec4.web.app">Other site</a>
-          <a href="https://dduicoder.tistory.com">Blog</a>
+          <a href="https://react-http-2cec4.web.app" target="_blank">
+            Other site
+          </a>
+          <a href="https://dduicoder.tistory.com" target="_blank">
+            Blog
+          </a>
         </section>
         <section>
           <span>Contact</span>
@@ -16,7 +20,9 @@ const Footer = () => {
         </section>
         <section>
           <span>About</span>
-          <span>This is a toy project. How do you like it?</span>
+          <span>
+            This is a toy project using Reactjs and Nextjs. How do you like it?
+          </span>
         </section>
       </div>
       <p>Copyright 2022. All rights reserved by Sijin Park.</p>
