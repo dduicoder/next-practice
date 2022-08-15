@@ -59,6 +59,7 @@ const MeetupForm = ({ onAddMeetup }) => {
               id={`image-input${i}`}
             />
             <button
+              type="button"
               className="btn"
               onClick={i === 0 ? addField : () => removeField(i)}
             >

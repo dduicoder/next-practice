@@ -9,7 +9,7 @@ const Footer = () => {
           <a href="https://react-http-2cec4.web.app" target="_blank">
             Other site
           </a>
-          <a href="https://dduicoder.tistory.com" target="_blank">
+          <a href="https://velog.io/@ddui" target="_blank">
             Blog
           </a>
         </section>
