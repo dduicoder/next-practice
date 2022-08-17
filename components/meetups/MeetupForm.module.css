@@ -11,18 +11,44 @@
   font-weight: bold;
 }
 
+.info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info div::after {
+  content: attr(data);
+  opacity: 0;
+  margin-left: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease-in-out;
+}
+
+.info div:hover::after {
+  opacity: 1;
+}
+
 .image {
   display: flex;
   gap: 0.5rem;
 }
 
 .form textarea::-webkit-scrollbar {
-  width: 5px;
+  width: 0.5rem;
 }
 
 .form textarea::-webkit-scrollbar-thumb {
-  background-color: #a8a8a8;
+  background-color: #c8c8c8;
   border-radius: 1rem;
+}
+
+.form input:focus:invalid,
+.form textarea:focus:invalid {
+  outline-color: #ff8383;
+  background-color: #fff3f3;
 }
 
 .action {

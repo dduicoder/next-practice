@@ -9,6 +9,8 @@ import Loader from "../components/UI/Loader";
 
 import "../styles/globals.css";
 
+// prefetch
+// page transition
 // 인덱스 페이지?
 
 const App = ({ Component, pageProps }) => {
