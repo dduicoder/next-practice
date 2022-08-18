@@ -12,7 +12,7 @@ const Pagination = ({ total, limit, page, setPage }) => {
           <button
             key={i}
             onClick={() => setPage(i + 1)}
-            className={page === i + 1 ? "" : classes.incurrent}
+            className={page === i + 1 ? "" : classes.notCurrent}
           >
             {i + 1}
           </button>

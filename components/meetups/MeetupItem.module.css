@@ -1,46 +1,48 @@
 .item {
   border-radius: 1rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-  border: 1px solid whitesmoke;
   padding-bottom: 1rem;
-  text-align: center;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 }
 
 .item:hover {
   transform: translateY(-0.5rem);
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
 }
 
 .item img {
+  width: 100%;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
-.item h3,
-.item address,
-.item p {
+.text {
+  padding: 0 1rem;
+}
+
+.text h3,
+.text address,
+.text p {
   max-width: 15rem;
   overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.item h3 {
-  font-size: 1.25rem;
-  margin: 1rem auto;
-}
-
-.item address {
-  margin: 0.25rem auto;
-}
-
-.item p {
-  margin: 0 auto;
-}
-
-.item p:first-of-type {
+  text-overflow: clip;
   opacity: 0.75;
+}
+
+.text h3 {
+  opacity: 1;
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+
+.text address {
+  opacity: 1;
+  margin: 0.25rem 0;
+}
+
+.text p {
+  margin: 0;
 }

@@ -30,14 +30,12 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <div id="overlays"></div>
-      <>
-        <Header />
-        {loading && <Loader />}
-        <main>
-          <Component {...pageProps} />
-        </main>
-        <Footer />
-      </>
+      <Header />
+      {loading && <Loader />}
+      <main>
+        <Component {...pageProps} />
+      </main>
+      <Footer />
     </>
   );
 };

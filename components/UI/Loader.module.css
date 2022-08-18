@@ -1,12 +1,12 @@
 .loader {
   height: 2px;
-  background-color: #abddfc;
-  animation: load 1s ease-in-out infinite;
+  background-color: rgb(175, 225, 255);
+  animation: loading 1s ease-in-out infinite;
   position: fixed;
   top: 4rem;
 }
 
-@keyframes load {
+@keyframes loading {
   from {
     width: 0;
   }

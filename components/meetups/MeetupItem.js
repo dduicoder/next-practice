@@ -15,14 +15,16 @@ const MeetupItem = ({ meetup }) => {
       }}
     >
       <img src={images[0]} alt={title} />
-      <h3>{title}</h3>
-      <p>{date}</p>
-      <address>{address}</address>
-      <p>
-        {description.length > 50
-          ? description.substr(0, 50) + "..."
-          : description}
-      </p>
+      <div className={classes.text}>
+        <h3>{title}</h3>
+        <p>{date}</p>
+        <address>{address}</address>
+        <p>
+          {description.length > 50
+            ? description.substr(0, 50) + "..."
+            : description}
+        </p>
+      </div>
     </li>
   );
 };
