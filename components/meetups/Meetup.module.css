@@ -1,25 +1,25 @@
-.detail img {
+.meetup img {
   width: 100%;
   border-radius: 1rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
 }
 
-.detail h1,
-.detail address,
-.detail p {
+.meetup h1,
+.meetup address,
+.meetup p {
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
 }
 
-.detail h1 {
+.meetup h1 {
   margin: 1.5rem 0;
 }
 
-.detail address {
+.meetup address {
   margin: 0.75rem 0;
 }
 
-.detail p:first-of-type {
+.meetup p:first-of-type {
   opacity: 0.75;
 }

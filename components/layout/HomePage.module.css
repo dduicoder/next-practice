@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
+.home {
+  text-align: center;
+}
+
+.home h1 {
+  line-height: 4rem;
+  font-size: 3rem;
+  background: linear-gradient(
+    45deg,
+    rgb(255, 200, 0) 0%,
+    var(--main-color) 50%,
+    rgb(255, 200, 0) 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 10s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position-x: left;
+  }
+  50% {
+    background-position-x: right;
+  }
+  100% {
+    background-position-x: left;
+  }
+}
+
+.home h1::selection {
+  -webkit-text-fill-color: #fff;
+  color: #fff;
+  background: var(--main-color);
+}
+
+.home p {
+  margin-bottom: 2rem;
+}
+
+.home > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stats {
+  margin-bottom: 2rem;
+}
+
+.stats div {
+  width: fit-content;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .stats {
+    flex-direction: column;
+  }
+}
+
+.stats div:hover {
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.05);
+}
+
+.stats span {
+  color: var(--main-color);
+}
+
+.stats :nth-child(2) span {
+  color: rgb(255, 200, 50);
+}

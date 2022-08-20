@@ -28,7 +28,7 @@ const Header = () => {
           setShowSide(false);
         }}
       />
-      <Link href="/meetups">Meetups</Link>
+      <Link href="/">Meetups</Link>
       <FontAwesomeIcon
         icon={faBars}
         onClick={() => {

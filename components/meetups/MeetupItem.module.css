@@ -1,7 +1,6 @@
 .item {
   border-radius: 1rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-  padding-bottom: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 }
@@ -20,7 +19,7 @@
 }
 
 .text {
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
 .text h3,
@@ -28,21 +27,17 @@
 .text p {
   max-width: 15rem;
   overflow: hidden;
-  text-overflow: clip;
+  text-overflow: ellipsis;
   opacity: 0.75;
+  margin: 0;
 }
 
 .text h3 {
   opacity: 1;
-  font-size: 1.25rem;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 }
 
 .text address {
   opacity: 1;
   margin: 0.25rem 0;
-}
-
-.text p {
-  margin: 0;
 }

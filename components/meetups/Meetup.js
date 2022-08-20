@@ -6,7 +6,7 @@ const Meetup = ({ meetup }) => {
   const { title, images, date, address, description } = meetup;
 
   return (
-    <section className={classes.detail}>
+    <section className={classes.meetup}>
       <Slider imgs={images} />
       <h1>{title}</h1>
       <p>{date}</p>

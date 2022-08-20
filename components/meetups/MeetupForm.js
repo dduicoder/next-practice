@@ -10,7 +10,7 @@ const MeetupForm = ({ onAddMeetup }) => {
 
   const changeField = (text, i) => {
     setImageFields((prevData) => {
-      let data = [...prevData];
+      const data = [...prevData];
       data[i] = text;
       return data;
     });
@@ -24,7 +24,7 @@ const MeetupForm = ({ onAddMeetup }) => {
 
   const removeField = (i) => {
     setImageFields((prevData) => {
-      let data = [...prevData];
+      const data = [...prevData];
       data.splice(i, 1);
       return data;
     });
@@ -107,7 +107,7 @@ const MeetupForm = ({ onAddMeetup }) => {
       <label htmlFor="description">Meetup Description</label>
       <textarea name="description" id="description" rows="5"></textarea>
       <div className={classes.action}>
-        <button className="btn">Add Meetup</button>
+        <button className="btn-flat">Add Meetup</button>
       </div>
     </form>
   );
