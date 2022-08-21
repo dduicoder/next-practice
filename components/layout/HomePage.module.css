@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
-
 .home {
   text-align: center;
+  padding-top: 2rem;
 }
 
 .home h1 {
-  line-height: 4rem;
+  line-height: 3.5rem;
   font-size: 3rem;
   background: linear-gradient(
     45deg,
@@ -60,14 +59,8 @@
   transition: all 0.25s ease-in-out;
 }
 
-@media (max-width: 600px) {
-  .stats {
-    flex-direction: column;
-  }
-}
-
 .stats div:hover {
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
 }
 
 .stats span {
@@ -76,4 +69,13 @@
 
 .stats :nth-child(2) span {
   color: rgb(255, 200, 50);
+}
+
+@media (max-width: 600px) {
+  .home {
+    padding-top: 0;
+  }
+  .stats {
+    flex-direction: column;
+  }
 }

@@ -15,7 +15,6 @@
   aspect-ratio: 16 / 9;
   border-radius: 1rem;
   object-fit: cover;
-  transition: all 0.5s ease-in-out;
 }
 
 .focusedImg {

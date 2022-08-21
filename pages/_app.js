@@ -10,8 +10,7 @@ import Loader from "../components/UI/Loader";
 import "../styles/globals.css";
 
 // prefetch
-// page transition
-// 인덱스 페이지?
+// 페이지 fetch
 
 const App = ({ Component, pageProps }) => {
   const [loading, setLoading] = useState(false);

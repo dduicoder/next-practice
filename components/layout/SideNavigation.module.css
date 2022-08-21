@@ -49,14 +49,14 @@
 }
 
 .open {
-  animation: pop-left 0.25s ease-in-out forwards;
+  animation: pop-in 0.25s ease-in-out forwards;
 }
 
 .close {
-  animation: pop-right 0.25s ease-in-out forwards;
+  animation: pop-out 0.25s ease-in-out forwards;
 }
 
-@keyframes pop-left {
+@keyframes pop-in {
   from {
     opacity: 0;
     right: -55vw;
@@ -67,7 +67,7 @@
   }
 }
 
-@keyframes pop-right {
+@keyframes pop-out {
   from {
     opacity: 1;
     right: 0;

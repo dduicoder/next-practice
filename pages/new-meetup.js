@@ -2,12 +2,11 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 
 import MeetupForm from "../components/meetups/MeetupForm";
-import { useCallback } from "react";
 
 const NewMeetupPage = () => {
   const router = useRouter();
 
-  const addMeetup = useCallback((meetupData) => {
+  const addMeetup = (meetupData) => {
     fetch("/api/new-meetup", {
       method: "POST",
       body: JSON.stringify(meetupData),
@@ -16,8 +15,8 @@ const NewMeetupPage = () => {
       },
     });
 
-    router.push("/");
-  });
+    router.push("/meetups");
+  };
 
   return (
     <>

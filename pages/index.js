@@ -2,7 +2,7 @@ import Head from "next/dist/shared/lib/head";
 
 import HomePage from "../components/layout/HomePage";
 
-const Home = () => {
+const IndexPage = () => {
   return (
     <>
       <Head>
@@ -14,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default IndexPage;
