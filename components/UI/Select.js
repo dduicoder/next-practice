@@ -1,9 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+
 import classes from "./Select.module.css";
 
-const Select = ({ value, setValue, list, text }) => {
+const Select = ({ value, setValue, options }) => {
   const [showSelect, setShowSelect] = useState(false);
 
   const wrapperRef = useRef();
@@ -14,12 +17,16 @@ const Select = ({ value, setValue, list, text }) => {
         setShowSelect(false);
       }
     });
-  }, []);
+  });
 
   return (
     <div ref={wrapperRef} className={classes.select}>
       <button className="btn" onClick={() => setShowSelect(!showSelect)}>
-        {text} {value}
+        {value}{" "}
+        <FontAwesomeIcon
+          className={showSelect ? classes.rotate : ""}
+          icon={faAngleDown}
+        />
       </button>
       <CSSTransition
         mountOnEnter
@@ -32,7 +39,7 @@ const Select = ({ value, setValue, list, text }) => {
         }}
       >
         <ul>
-          {list.map((val) => (
+          {options.map((val) => (
             <li
               className={val === value ? classes.current : ""}
               key={val}

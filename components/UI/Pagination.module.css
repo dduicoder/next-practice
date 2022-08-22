@@ -7,12 +7,16 @@
 }
 
 .pagination button {
-  border: none;
   font-size: 1rem;
   background-color: white;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.pagination svg {
+  color: rgba(0, 0, 0, 0.75);
   cursor: pointer;
 }
 
-.notCurrent {
-  color: rgba(0, 0, 0, 0.5);
+.current {
+  color: black !important;
 }

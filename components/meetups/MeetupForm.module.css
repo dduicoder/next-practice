@@ -1,6 +1,6 @@
 .form {
   padding: 1.5rem;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
@@ -20,6 +20,7 @@
 .info div::after {
   content: attr(data);
   opacity: 0;
+  font-size: 0.9rem;
   margin-left: 0.5rem;
   border-radius: 0.5rem;
   padding: 0.5rem;

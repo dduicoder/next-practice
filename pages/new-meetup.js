@@ -22,10 +22,7 @@ const NewMeetupPage = () => {
     <>
       <Head>
         <title>Meetups - Add meetup</title>
-        <meta
-          name="description"
-          content="Add your own meetup and meetup with the world."
-        />
+        <meta name="description" content="Post your meetups." />
       </Head>
       <MeetupForm onAddMeetup={addMeetup} />
     </>

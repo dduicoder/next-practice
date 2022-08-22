@@ -44,8 +44,7 @@ const MeetupList = ({ meetups }) => {
         <Select
           value={searchOption}
           setValue={setSearchOption}
-          list={options}
-          text={"Search: "}
+          options={options}
         />
       </div>
       {filteredMeetups.length !== 0 ? (
@@ -63,7 +62,7 @@ const MeetupList = ({ meetups }) => {
           />
         </>
       ) : (
-        <p style={{ textAlign: "center", marginTop: "3rem" }}>- No Result -</p>
+        <p className={classes.error}>- No Result -</p>
       )}
     </>
   );

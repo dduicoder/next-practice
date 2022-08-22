@@ -20,7 +20,7 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.footer section {
+.footer div {
   display: flex;
   flex-direction: column;
   color: #d4d4d4;
@@ -28,7 +28,7 @@
   margin-bottom: 1rem;
 }
 
-.footer section :first-child {
+.footer div :first-child {
   font-weight: bold;
   font-size: 1rem;
   color: white;

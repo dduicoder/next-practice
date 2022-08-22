@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import MeetupList from "../../components/meetups/MeetupList";
 
-const HomePage = ({ meetups }) => {
+const MeetupsPage = ({ meetups }) => {
   return (
     <>
       <Head>
@@ -42,4 +42,4 @@ export const getStaticProps = async () => {
   };
 };
 
-export default HomePage;
+export default MeetupsPage;
