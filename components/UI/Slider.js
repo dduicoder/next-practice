@@ -46,7 +46,7 @@ const Slider = ({ imgs }) => {
             exitActive: classes.close,
           }}
         >
-          <img src={imgUrl} className={classes.focusedImg} />
+          <img src={imgUrl} className={classes.focused} />
         </CSSTransition>
       </Portal>
       <div

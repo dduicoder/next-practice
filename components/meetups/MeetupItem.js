@@ -14,7 +14,9 @@ const MeetupItem = ({ meetup }) => {
         router.push("meetups/" + id);
       }}
     >
-      <img src={images[0]} alt={title} />
+      <div className={classes.img}>
+        <img src={images[0]} alt={title} />
+      </div>
       <div className={classes.text}>
         <h3>{title}</h3>
         <p>{date}</p>

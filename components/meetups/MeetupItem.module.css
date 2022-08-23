@@ -6,16 +6,25 @@
 }
 
 .item:hover {
-  transform: translateY(-0.5rem);
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
 }
 
-.item img {
-  width: 100%;
+.img {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  aspect-ratio: 16 / 9;
+}
+
+.img img {
+  width: 100%;
   object-fit: cover;
+  aspect-ratio: 16 / 9;
+  transition: all 0.25s ease-in-out;
+}
+
+.item:hover img {
+  transform: scale(1.05);
 }
 
 .text {

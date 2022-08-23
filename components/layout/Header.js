@@ -12,6 +12,7 @@ import classes from "./Header.module.css";
 
 const Header = () => {
   const [showSide, setShowSide] = useState(false);
+
   const router = useRouter();
 
   return (

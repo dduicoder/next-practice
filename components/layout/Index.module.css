@@ -1,9 +1,9 @@
-.home {
+.index {
   text-align: center;
   padding-top: 2rem;
 }
 
-.home h1 {
+.index h1 {
   line-height: 3.5rem;
   font-size: 3rem;
   background: linear-gradient(
@@ -30,40 +30,40 @@
   }
 }
 
-.home h1::selection {
-  -webkit-text-fill-color: #fff;
-  color: #fff;
+.index h1::selection {
+  -webkit-text-fill-color: white;
+  color: white;
   background: var(--main-color);
 }
 
-.home p {
+.index p {
+  font-size: 1.1rem;
   margin-bottom: 2rem;
 }
 
-.home > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
 .stats {
+  display: grid;
+  place-items: center;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 2rem;
 }
 
 .stats div {
-  width: fit-content;
-  border-radius: 1rem;
+  width: 100%;
   padding: 1rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
-  transition: all 0.25s ease-in-out;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.stats div:hover {
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+.stats div svg {
+  margin: auto;
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-.stats span {
+.stats :first-child span {
   color: var(--main-color);
 }
 
@@ -71,11 +71,21 @@
   color: rgb(255, 200, 50);
 }
 
+.stats :last-child span {
+  color: #fb7445;
+}
+
+.action {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
 @media (max-width: 600px) {
-  .home {
+  .index {
     padding-top: 0;
   }
   .stats {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }

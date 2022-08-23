@@ -4,7 +4,7 @@ import Head from "next/head";
 import Meetup from "../../components/meetups/Meetup";
 import NotFound from "../../components/layout/NotFound";
 
-const MeetupDetail = ({ meetup }) => {
+const MeetupPage = ({ meetup }) => {
   return (
     <>
       <Head>
@@ -81,4 +81,4 @@ export const getStaticProps = async (context) => {
   };
 };
 
-export default MeetupDetail;
+export default MeetupPage;

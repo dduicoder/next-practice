@@ -1,3 +1,5 @@
+import Link from "next/dist/client/link";
+
 import classes from "./Footer.module.css";
 
 const Footer = () => {
@@ -12,6 +14,11 @@ const Footer = () => {
           <a href="https://velog.io/@ddui" target="_blank">
             Blog
           </a>
+        </div>
+        <div>
+          <span>Help</span>
+          <Link href="/faq">FAQ</Link>
+          <Link href="/terms-of-use">Terms of use</Link>
         </div>
         <div>
           <span>Contact</span>
