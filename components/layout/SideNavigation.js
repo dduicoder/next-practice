@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { CSSTransition } from "react-transition-group";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faHandshakeSimple } from "@fortawesome/free-solid-svg-icons";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,36 +24,36 @@ const SideNavigation = ({ show, close }) => {
           exitActive: classes.close,
         }}
       >
-        <nav className={classes.nav}>
+        <div className={classes.side}>
           <div className={classes.control}>
             <span>Navigate</span>
-            <span onClick={close}>X</span>
+            <FontAwesomeIcon icon={faXmark} onClick={close} />
           </div>
-          <button
-            onClick={() => {
-              router.push("/meetups");
-              close();
-            }}
-            className={`btn ${
-              router.pathname.startsWith("/meetups") ? classes.active : ""
-            }`}
-          >
-            All Meetups
-            <FontAwesomeIcon icon={faHandshakeSimple} />
-          </button>
-          <button
-            onClick={() => {
-              router.push("/new-meetup");
-              close();
-            }}
-            className={`btn ${
-              router.pathname === "/new-meetup" ? classes.active : ""
-            }`}
-          >
-            Add Meetup
-            <FontAwesomeIcon icon={faPen} />
-          </button>
-        </nav>
+          <nav>
+            <button
+              onClick={() => {
+                router.push("/meetups");
+                close();
+              }}
+              className={
+                router.pathname.startsWith("/meetups") ? "btn-flat" : "btn"
+              }
+            >
+              All Meetups
+              <FontAwesomeIcon icon={faHandshakeSimple} />
+            </button>
+            <button
+              onClick={() => {
+                router.push("/new-meetup");
+                close();
+              }}
+              className={router.pathname === "/new-meetup" ? "btn-flat" : "btn"}
+            >
+              Add Meetup
+              <FontAwesomeIcon icon={faPen} />
+            </button>
+          </nav>
+        </div>
       </CSSTransition>
     </Portal>
   );

@@ -17,7 +17,7 @@ body {
   margin: 0;
 }
 
-main {
+.main {
   margin: 3rem auto;
   padding: 0 1rem;
   min-height: calc(100vh - 10rem);
@@ -46,18 +46,18 @@ textarea {
   resize: none;
   font: inherit;
   border: none;
-  outline: 1px solid rgb(200, 200, 200);
   padding: 0.5rem;
   border-radius: 0.5rem;
+  outline-offset: -1px;
+  outline: 1px solid rgb(200, 200, 200);
   width: 100%;
   transition: all 0.25s ease-in-out;
-  outline-offset: -1px;
 }
 
 input:focus,
 textarea:focus {
   outline-offset: -1.5px;
-  outline: 3px solid rgba(0, 125, 250, 0.6);
+  outline: 3px solid rgba(0, 125, 250, 0.5);
 }
 
 .btn {

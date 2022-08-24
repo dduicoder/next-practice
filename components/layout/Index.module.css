@@ -1,11 +1,29 @@
-.index {
+.wrapper {
+  margin: auto;
   text-align: center;
-  padding-top: 2rem;
+  height: calc(100vh - 4rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 1rem;
 }
 
-.index h1 {
+.wrapper h1 {
   line-height: 3.5rem;
   font-size: 3rem;
+}
+
+.first {
+  z-index: -1;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-top: 4rem;
+  width: min(100%, 45rem);
+  min-height: calc(100vh - 4rem);
+  transform-style: preserve-3d;
+  transform: translateZ(-1rem) scale(2);
+}
+
+.first h1 {
   background: linear-gradient(
     45deg,
     rgb(255, 200, 0) 0%,
@@ -30,13 +48,13 @@
   }
 }
 
-.index h1::selection {
+.first h1::selection {
   -webkit-text-fill-color: white;
   color: white;
   background: var(--main-color);
 }
 
-.index p {
+.first p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
 }
@@ -63,16 +81,16 @@
   margin-bottom: 1rem;
 }
 
-.stats :first-child span {
+.first .stats :first-child span {
   color: var(--main-color);
 }
 
-.stats :nth-child(2) span {
+.first .stats :nth-child(2) span {
   color: rgb(255, 200, 50);
 }
 
-.stats :last-child span {
-  color: #fb7445;
+.first .stats :last-child span {
+  color: rgb(250, 125, 75);
 }
 
 .action {
@@ -81,9 +99,31 @@
   gap: 1rem;
 }
 
+.second {
+  transform: translateZ(0);
+  background: var(--main-color);
+  color: white;
+  min-height: 100%;
+  width: 100%;
+}
+
+.second > div {
+  padding: 1rem;
+  margin: auto;
+  width: min(100%, 60rem);
+}
+
+.second .stats {
+  grid-gap: 2rem;
+}
+
+.second .stats div {
+  border: none;
+}
+
 @media (max-width: 600px) {
-  .index {
-    padding-top: 0;
+  .first {
+    padding-top: 3rem;
   }
   .stats {
     grid-template-columns: 1fr;

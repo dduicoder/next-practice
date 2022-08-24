@@ -31,10 +31,10 @@ const App = ({ Component, pageProps }) => {
       <div id="overlays"></div>
       <Header />
       {loading && <Loader />}
-      <main>
+      <main className={router.pathname !== "/" ? "main" : ""}>
         <Component {...pageProps} />
       </main>
-      <Footer />
+      {router.pathname !== "/" && <Footer />}
     </>
   );
 };

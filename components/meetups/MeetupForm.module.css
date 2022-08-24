@@ -48,8 +48,8 @@
 
 .form input:focus:invalid,
 .form textarea:focus:invalid {
-  outline-color: #ff8383;
-  background-color: #fff3f3;
+  outline-color: rgb(250, 125, 125);
+  background-color: rgb(255, 240, 240);
 }
 
 .action {
