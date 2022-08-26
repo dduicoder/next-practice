@@ -1,39 +1,52 @@
 .wrapper {
-  margin: auto;
-  text-align: center;
   height: calc(100vh - 4rem);
-  overflow-y: auto;
   overflow-x: hidden;
   perspective: 1rem;
+  scroll-behavior: smooth;
+}
+
+.wrapper section {
+  min-height: 100%;
+  padding: 1rem;
+  padding-top: 3rem;
+  text-align: center;
 }
 
 .wrapper h1 {
-  line-height: 3.5rem;
   font-size: 3rem;
+  line-height: 125%;
 }
 
-.first {
-  z-index: -1;
-  margin: 0 auto;
-  padding: 1rem;
-  padding-top: 4rem;
-  width: min(100%, 45rem);
-  min-height: calc(100vh - 4rem);
-  transform-style: preserve-3d;
-  transform: translateZ(-1rem) scale(2);
-}
-
-.first h1 {
+.wrapper h1:not(.second h1) {
   background: linear-gradient(
     45deg,
-    rgb(255, 200, 0) 0%,
+    rgb(255, 175, 0) 0%,
     var(--main-color) 50%,
-    rgb(255, 200, 0) 100%
+    rgb(255, 175, 0) 100%
   );
   background-size: 200% auto;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient 10s ease-in-out infinite;
+}
+
+.wrapper h1:not(.second h1)::selection {
+  -webkit-text-fill-color: white;
+  color: white;
+  background: var(--main-color);
+}
+
+.wrapper section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.first {
+  margin: auto;
+  width: min(100%, 45rem);
+  min-height: calc(100vh - 4rem);
+  transform-style: preserve-3d;
+  transform: translateZ(-1rem) scale(2);
 }
 
 @keyframes gradient {
@@ -48,84 +61,79 @@
   }
 }
 
-.first h1::selection {
-  -webkit-text-fill-color: white;
-  color: white;
-  background: var(--main-color);
-}
-
-.first p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-.stats {
-  display: grid;
-  place-items: center;
-  grid-gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-bottom: 2rem;
-}
-
-.stats div {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.stats div svg {
-  margin: auto;
-  display: block;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.first .stats :first-child span {
-  color: var(--main-color);
-}
-
-.first .stats :nth-child(2) span {
-  color: rgb(255, 200, 50);
-}
-
-.first .stats :last-child span {
-  color: rgb(250, 125, 75);
-}
-
 .action {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.first > svg {
+  margin: auto;
+  display: block;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  animation: shake 1s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .second {
-  transform: translateZ(0);
-  background: var(--main-color);
   color: white;
-  min-height: 100%;
-  width: 100%;
+  transform: translateZ(0);
+  background: linear-gradient(-45deg, rgb(255, 125, 75), var(--main-color));
 }
 
 .second > div {
-  padding: 1rem;
   margin: auto;
   width: min(100%, 60rem);
 }
 
-.second .stats {
+.stats {
+  padding: 1rem 0;
+  display: grid;
+  place-items: center;
   grid-gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.second .stats div {
-  border: none;
+.stats div svg {
+  display: block;
+  font-size: 2rem;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.second p {
+  margin: 1rem auto;
+  width: min(100%, 45rem);
+}
+
+.third {
+  margin: auto;
+  width: min(100%, 45rem);
 }
 
 @media (max-width: 600px) {
-  .first {
-    padding-top: 3rem;
+  .wrapper section {
+    padding-top: 2rem;
   }
   .stats {
     grid-template-columns: 1fr;
+    font-size: 1.1rem;
+  }
+  .stats div svg {
+    font-size: 2.2rem;
   }
 }

@@ -17,14 +17,14 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.footer div {
+.control div {
+  font-size: 0.9rem;
+  color: rgb(200, 200, 200);
   display: flex;
   flex-direction: column;
-  color: rgb(200, 200, 200);
-  font-size: 0.9rem;
 }
 
-.footer div :first-child {
+.control div :first-child {
   font-weight: bold;
   font-size: 1rem;
   color: white;

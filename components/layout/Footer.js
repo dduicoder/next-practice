@@ -5,7 +5,7 @@ import classes from "./Footer.module.css";
 const Footer = () => {
   return (
     <footer className={classes.footer}>
-      <section className={classes.control}>
+      <div className={classes.control}>
         <div>
           <span>Links</span>
           <a href="https://react-http-2cec4.web.app" target="_blank">
@@ -31,7 +31,7 @@ const Footer = () => {
             This is a toy project using Reactjs and Nextjs. How do you like it?
           </span>
         </div>
-      </section>
+      </div>
       <p>Copyright 2022. All rights reserved by Sijin Park.</p>
     </footer>
   );

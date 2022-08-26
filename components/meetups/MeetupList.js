@@ -1,8 +1,8 @@
 import { useState } from "react";
 
+import Select from "../UI/Select";
 import MeetupItem from "./MeetupItem";
 import Pagination from "../UI/Pagination";
-import Select from "../UI/Select";
 
 import classes from "./MeetupList.module.css";
 

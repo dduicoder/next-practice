@@ -2,9 +2,11 @@ import { useRouter } from "next/router";
 import { CSSTransition } from "react-transition-group";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { faHandshakeSimple } from "@fortawesome/free-solid-svg-icons";
-import { faPen } from "@fortawesome/free-solid-svg-icons";
+import {
+  faXmark,
+  faHandshakeSimple,
+  faPen,
+} from "@fortawesome/free-solid-svg-icons";
 
 import Portal from "../UI/Portal";
 
