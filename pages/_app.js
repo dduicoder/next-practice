@@ -10,8 +10,6 @@ import Loader from "../components/UI/Loader";
 import "../styles/globals.css";
 
 // next/image 쓰기
-// prefetch
-// 페이지 fetch
 
 const App = ({ Component, pageProps }) => {
   const [loading, setLoading] = useState(false);
