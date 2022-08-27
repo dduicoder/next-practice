@@ -1,12 +1,16 @@
 .wrapper {
-  height: calc(100vh - 4rem);
+  height: 100vh;
   overflow-x: hidden;
   perspective: 1rem;
   scroll-behavior: smooth;
 }
 
-.wrapper section {
-  min-height: 100%;
+.wrapper > header {
+  box-shadow: none;
+}
+
+.wrapper > section {
+  min-height: calc(100vh - 4rem);
   padding: 1rem;
   padding-top: 3rem;
   text-align: center;
@@ -30,6 +34,18 @@
   animation: gradient 10s ease-in-out infinite;
 }
 
+@keyframes gradient {
+  0% {
+    background-position-x: left;
+  }
+  50% {
+    background-position-x: right;
+  }
+  100% {
+    background-position-x: left;
+  }
+}
+
 .wrapper h1:not(.second h1)::selection {
   -webkit-text-fill-color: white;
   color: white;
@@ -44,21 +60,8 @@
 .first {
   margin: auto;
   width: min(100%, 45rem);
-  min-height: calc(100vh - 4rem);
   transform-style: preserve-3d;
   transform: translateZ(-1rem) scale(2);
-}
-
-@keyframes gradient {
-  0% {
-    background-position-x: left;
-  }
-  50% {
-    background-position-x: right;
-  }
-  100% {
-    background-position-x: left;
-  }
 }
 
 .action {
@@ -125,6 +128,23 @@
   width: min(100%, 45rem);
 }
 
+.third > div {
+  margin: 3rem 0;
+}
+
+.up {
+  background-color: white;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  width: 1rem;
+  height: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .wrapper section {
     padding-top: 2rem;
@@ -135,5 +155,9 @@
   }
   .stats div svg {
     font-size: 2.2rem;
+  }
+  .up {
+    left: unset;
+    right: 1rem;
   }
 }

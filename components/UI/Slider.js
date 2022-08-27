@@ -30,10 +30,10 @@ const Slider = ({ imgs }) => {
     return () => {
       resetTimeout();
     };
-  }, [index]);
+  }, [index, total]);
 
   return (
-    <section className={classes.container}>
+    <div className={classes.container}>
       <Backdrop show={showImg} close={() => setShowImg(false)} />
       <Portal>
         <CSSTransition
@@ -95,7 +95,7 @@ const Slider = ({ imgs }) => {
             />
           ))}
       </nav>
-    </section>
+    </div>
   );
 };
 

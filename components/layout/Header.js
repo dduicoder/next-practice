@@ -5,7 +5,6 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import Backdrop from "../UI/Backdrop";
 import SideNavigation from "./SideNavigation";
 
 import classes from "./Header.module.css";
@@ -17,12 +16,6 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <Backdrop
-        show={showSide}
-        close={() => {
-          setShowSide(false);
-        }}
-      />
       <SideNavigation
         show={showSide}
         close={() => {

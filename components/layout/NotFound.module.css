@@ -1,7 +1,11 @@
-.notFound {
+.error {
   text-align: center;
 }
 
-.notFound p {
+.error svg {
+  font-size: 2rem;
+}
+
+.error p {
   margin-bottom: 1.5rem;
 }

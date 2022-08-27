@@ -11,12 +11,22 @@ const Select = ({ value, setValue, options }) => {
 
   const wrapperRef = useRef();
 
+  const docMouseDownHandler = (event) => {
+    if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+      setShowSelect(false);
+    }
+  };
+
   useEffect(() => {
-    document.addEventListener("mousedown", (event) => {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
-        setShowSelect(false);
-      }
-    });
+    document.addEventListener("mousedown", (event) =>
+      docMouseDownHandler(event)
+    );
+
+    return () => {
+      document.removeEventListener("mousedown", (event) =>
+        docMouseDownHandler(event)
+      );
+    };
   });
 
   return (

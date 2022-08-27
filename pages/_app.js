@@ -9,6 +9,7 @@ import Loader from "../components/UI/Loader";
 
 import "../styles/globals.css";
 
+// next/image 쓰기
 // prefetch
 // 페이지 fetch
 
@@ -29,10 +30,10 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <div id="overlays"></div>
-      <Header />
       {loading && <Loader />}
       {router.pathname !== "/" ? (
         <>
+          <Header />
           <main className="main">
             <Component {...pageProps} />
           </main>
