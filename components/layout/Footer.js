@@ -8,10 +8,14 @@ const Footer = () => {
       <div className={classes.control}>
         <div>
           <span>Links</span>
-          <a href="https://react-http-2cec4.web.app" target="_blank">
+          <a
+            href="https://react-http-2cec4.web.app"
+            target="_blank"
+            rel="noreferrer"
+          >
             Other site
           </a>
-          <a href="https://velog.io/@ddui" target="_blank">
+          <a href="https://velog.io/@ddui" target="_blank" rel="noreferrer">
             Blog
           </a>
         </div>

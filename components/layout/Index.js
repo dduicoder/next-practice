@@ -87,7 +87,7 @@ const Index = () => {
               we have achieved an outstanding 93% success rate of meetups. This
               led us to 13 million users worldwide, 1000 meetups per day and a
               total of 3 million meetups. Do you want to know what the best part
-              is? It's all free!
+              is? This is 100% free!
             </p>
           </div>
         </section>

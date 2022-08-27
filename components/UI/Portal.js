@@ -6,7 +6,7 @@ const Portal = ({ children }) => {
 
   useEffect(() => {
     setMounted(true);
-  });
+  }, [setMounted]);
 
   return mounted
     ? createPortal(children, document.getElementById("overlays"))
