@@ -9,8 +9,6 @@ import Loader from "../components/UI/Loader";
 
 import "../styles/globals.css";
 
-// next/image 쓰기
-
 const App = ({ Component, pageProps }) => {
   const [loading, setLoading] = useState(false);
 

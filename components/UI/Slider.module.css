@@ -59,6 +59,7 @@
 }
 
 .arrow {
+  cursor: pointer;
   position: absolute;
   font-size: 2rem;
   color: rgba(255, 255, 255, 0.9);

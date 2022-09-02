@@ -1,7 +1,7 @@
 const TOS = () => {
   return (
     <section>
-      <h1>Terms of use</h1>
+      <h1 style={{ marginBottom: "2rem" }}>Terms of use</h1>
       {Array(5)
         .fill()
         .map((_, i) => (

@@ -4,6 +4,12 @@ import { CSSTransition } from "react-transition-group";
 import Backdrop from "./Backdrop";
 import Portal from "./Portal";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronRight,
+  faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons";
+
 import classes from "./Slider.module.css";
 
 const Slider = ({ imgs }) => {
@@ -46,7 +52,7 @@ const Slider = ({ imgs }) => {
             exitActive: classes.close,
           }}
         >
-          <img src={imgUrl} className={classes.focused} />
+          <img src={imgUrl} alt={imgUrl} className={classes.focused} />
         </CSSTransition>
       </Portal>
       <div
@@ -62,28 +68,27 @@ const Slider = ({ imgs }) => {
           return (
             <img
               onClick={() => {
-                setShowImg(true);
                 setImgUrl(img);
+                setShowImg(true);
               }}
               key={i}
               src={img}
+              alt={img}
               style={{ width: `${100 / total}%` }}
             />
           );
         })}
       </div>
-      <button
+      <FontAwesomeIcon
+        icon={faChevronLeft}
         className={classes.arrow}
         onClick={() => setIndex(index === 1 ? total : index - 1)}
-      >
-        &lt;
-      </button>
-      <button
+      />
+      <FontAwesomeIcon
+        icon={faChevronRight}
         className={classes.arrow}
         onClick={() => setIndex(index === total ? 1 : index + 1)}
-      >
-        &gt;
-      </button>
+      />
       <nav>
         {Array(total)
           .fill()

@@ -9,17 +9,16 @@
 .meetup p {
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0;
 }
 
 .meetup h1 {
   margin: 1.5rem 0;
 }
 
-.meetup address {
-  margin: 0.75rem 0;
+.meetup p {
+  margin: 0.5rem 0;
 }
 
-.meetup p:first-of-type {
-  opacity: 0.75;
+.control {
+  text-align: right;
 }
