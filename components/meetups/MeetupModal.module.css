@@ -39,6 +39,10 @@
   margin: 0.5rem 0;
 }
 
+.modal form {
+  margin-top: 1.5rem;
+}
+
 .modal label {
   font-weight: bold;
 }
@@ -48,7 +52,17 @@
 }
 
 .action {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action div button:first-of-type {
+  margin-right: 0.5rem;
+}
+
+.action p {
+  opacity: 0.75;
 }
 
 .open {

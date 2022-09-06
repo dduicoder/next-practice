@@ -30,8 +30,12 @@ const Index = () => {
         <section className={classes.first}>
           <h1>Post your meetups, Meetup with the world</h1>
           <p>
-            Discover meetups all around the world and meetup with various
-            peoples, Post your own meetup and be the host to your meetup.
+            {/* Discover meetups all around the world and meetup with various
+            peoples, Post your own meetup and be the host to your meetup. */}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
+            nesciunt quaerat libero debitis adipisci, totam doloremque
+            aspernatur iure repellendus odit dignissimos commodi facere ab
+            beatae temporibus deleniti reprehenderit officiis consectetur!
           </p>
           <div className={classes.action}>
             <Link href="/meetups">
@@ -83,20 +87,27 @@ const Index = () => {
               </div>
             </div>
             <p>
-              We offer you a well-made auto matching system. With this system,
+              {/* We offer you a well-made auto matching system. With this system,
               we have achieved an outstanding 93% success rate of meetups. This
               led us to 13 million users worldwide, 1000 meetups per day and a
               total of 3 million meetups. Do you want to know what the best part
-              is? This is 100% free!
+              is? This is 100% free! */}
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
+              nostrum. Non architecto quo in modi. Beatae odio similique quod
+              consequatur perferendis assumenda neque, earum magni atque ullam
+              ipsam autem recusandae.
             </p>
           </div>
         </section>
         <section className={classes.third}>
-          <h1>We change the world with Interaction</h1>
+          <h1>Interaction</h1>
           <Slider imgs={imgs} />
           <p>
-            We have had 3 million total meetups so far. In the process, we
-            arranged various relationships.
+            {/* We have had 3 million total meetups so far. In the process, we
+            arranged various relationships. */}
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi
+            eius ea aliquid officia consequuntur itaque praesentium rem magnam
+            unde harum commodi autem, culpa vel minus. Atque cum natus ea nisi.
           </p>
         </section>
         <Footer />

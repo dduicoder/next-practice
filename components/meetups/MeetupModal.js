@@ -9,7 +9,12 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import classes from "./MeetupModal.module.css";
 
 const MeetupModal = ({ show, close, meetup }) => {
-  const { title, images, date, address, description } = meetup;
+  const { title, date, address, description } = meetup;
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <>
       <Backdrop show={show} close={close} />
@@ -30,16 +35,22 @@ const MeetupModal = ({ show, close, meetup }) => {
               <FontAwesomeIcon icon={faXmark} onClick={close} />
             </div>
             <h2>{title}</h2>
-            <p>{date}</p>
-            <address>{address}</address>
-            <p>{description}</p>
-            <label htmlFor="meetup-description">Description</label>
-            <textarea id="meetup-description" rows="5"></textarea>
-            <div className={classes.action}>
-              <button className="btn-flat" onClick={close}>
-                Meetup!
-              </button>
-            </div>
+            <p>Date: {date}</p>
+            <address>Address: {address}</address>
+            <p>Description: {description}</p>
+            <form onSubmit={submitHandler}>
+              <label htmlFor="meetup-description">Describe yourself</label>
+              <textarea id="meetup-description" rows="5"></textarea>
+              <div className={classes.action}>
+                <p>Make sure that this is your correct meetup</p>
+                <div>
+                  <button className="btn" type="button" onClick={close}>
+                    Cancel
+                  </button>
+                  <button className="btn-flat">Meetup!</button>
+                </div>
+              </div>
+            </form>
           </div>
         </CSSTransition>
       </Portal>
