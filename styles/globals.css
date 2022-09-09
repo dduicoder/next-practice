@@ -72,8 +72,7 @@ textarea:focus {
 
 .btn:hover,
 .btn:active {
-  background-color: var(--main-color);
-  color: white;
+  background-color: rgb(255, 245, 245);
 }
 
 .btn-flat {

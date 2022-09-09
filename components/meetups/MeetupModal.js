@@ -15,6 +15,10 @@ const MeetupModal = ({ show, close, meetup }) => {
     event.preventDefault();
   };
 
+  const meetupDate = new Date(date);
+
+  const currentDate = new Date();
+
   return (
     <>
       <Backdrop show={show} close={close} />
@@ -35,8 +39,14 @@ const MeetupModal = ({ show, close, meetup }) => {
               <FontAwesomeIcon icon={faXmark} onClick={close} />
             </div>
             <h2>{title}</h2>
-            <p>Date: {date}</p>
-            <address>Address: {address}</address>
+            <p>
+              Date: {date} (
+              {Math.round(
+                (meetupDate.getTime() - currentDate.getTime()) / 86400000
+              )}{" "}
+              days left)
+            </p>
+            <p>Address: {address}</p>
             <p>Description: {description}</p>
             <form onSubmit={submitHandler}>
               <label htmlFor="meetup-description">Describe yourself</label>

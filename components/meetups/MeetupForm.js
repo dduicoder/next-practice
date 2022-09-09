@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleInfo,
+  faPlus,
+  faMinus,
+} from "@fortawesome/free-solid-svg-icons";
 
 import classes from "./MeetupForm.module.css";
 
@@ -52,12 +56,12 @@ const MeetupForm = ({ onAddMeetup }) => {
     <form className={classes.form} onSubmit={submitHandler}>
       <label htmlFor="title">Meetup Title</label>
       <input required pattern=".*\S+.*" name="title" type="text" id="title" />
-      <div className={classes.info}>
-        <label htmlFor="image-input0">Meetup Image</label>
+      <label htmlFor="image-input0" className={classes.info}>
+        Meetup Image
         <div data="Input image URL">
           <FontAwesomeIcon icon={faCircleInfo} />
         </div>
-      </div>
+      </label>
       {imageFields.map((text, i) => {
         return (
           <div className={classes.image} key={i}>
@@ -73,17 +77,17 @@ const MeetupForm = ({ onAddMeetup }) => {
               className="btn"
               onClick={i === 0 ? addField : () => removeField(i)}
             >
-              {i === 0 ? "+" : "-"}
+              <FontAwesomeIcon icon={i === 0 ? faPlus : faMinus} />
             </button>
           </div>
         );
       })}
-      <div className={classes.info}>
-        <label htmlFor="date">Meetup Date</label>
+      <label htmlFor="date" className={classes.info}>
+        Meetup Date
         <div data="Minimum date: today">
           <FontAwesomeIcon icon={faCircleInfo} />
         </div>
-      </div>
+      </label>
       <input
         required
         min={date.toISOString().split("T")[0]}
@@ -104,7 +108,12 @@ const MeetupForm = ({ onAddMeetup }) => {
         type="text"
         id="address"
       />
-      <label htmlFor="description">Meetup Description</label>
+      <label htmlFor="description" className={classes.info}>
+        Meetup Description
+        <div data="Not required">
+          <FontAwesomeIcon icon={faCircleInfo} />
+        </div>
+      </label>
       <textarea name="description" id="description" rows="5"></textarea>
       <div className={classes.action}>
         <button className="btn-flat">Add Meetup</button>

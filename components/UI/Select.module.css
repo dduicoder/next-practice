@@ -23,7 +23,6 @@
 }
 
 .select ul li {
-  border-radius: 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
   transition: all 0.25s ease-in-out;

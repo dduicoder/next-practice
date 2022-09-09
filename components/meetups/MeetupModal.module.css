@@ -1,11 +1,11 @@
 .modal {
-  position: fixed;
-  top: 10vh;
   padding: 1rem;
   border-radius: 1rem;
+  position: fixed;
+  top: 10vh;
   left: 50%;
   transform: translateX(-50%);
-  width: min(100%, 40rem);
+  width: min(100%, 45rem);
   height: 80vh;
   z-index: 5;
   overflow-y: scroll;
@@ -57,8 +57,9 @@
   align-items: center;
 }
 
-.action div button:first-of-type {
-  margin-right: 0.5rem;
+.action div {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .action p {
