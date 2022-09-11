@@ -1,3 +1,13 @@
+.meetup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.meetup > * {
+  margin: 0;
+}
+
 .meetup img {
   width: 100%;
   border-radius: 1rem;
@@ -15,8 +25,30 @@
   margin: 1.5rem 0;
 }
 
-.meetup p {
-  margin: 0.5rem 0;
+.tags {
+  overflow-x: scroll;
+  display: flex;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: -0.5rem;
+}
+
+.tags::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+.tags::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+}
+
+.tags span {
+  min-width: fit-content;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.75);
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .control {

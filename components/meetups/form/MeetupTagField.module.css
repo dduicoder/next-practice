@@ -1,0 +1,48 @@
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: scroll;
+  padding-bottom: 5px;
+  margin-bottom: -5px;
+}
+
+.tags::-webkit-scrollbar {
+  height: 5px;
+}
+
+.tags::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.tags div {
+  min-width: fit-content;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  animation: pop 0.25s ease-in-out;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.tags input {
+  min-width: 50%;
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+}
+
+.tags input:focus {
+  border-color: rgba(0, 0, 0, 0.25);
+}

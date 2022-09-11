@@ -1,0 +1,8 @@
+.image {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.image button {
+  padding: 0.5rem;
+}

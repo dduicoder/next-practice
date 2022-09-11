@@ -15,31 +15,25 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  position: relative;
 }
 
 .info div::after {
   content: attr(data);
   opacity: 0;
   font-size: 0.9rem;
+  position: absolute;
+  bottom: 0;
   margin-left: 0.5rem;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.05);
   transition: all 0.25s ease-in-out;
   font-weight: normal;
 }
 
 .info div:hover::after {
   opacity: 1;
-}
-
-.image {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.image button {
-  padding: 0.5rem;
 }
 
 .form textarea::-webkit-scrollbar {

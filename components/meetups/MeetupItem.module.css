@@ -3,6 +3,7 @@
   border-radius: 1rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
   transition: all 0.25s ease-in-out;
+  min-width: 0px;
 }
 
 .item:hover {
@@ -29,23 +30,35 @@
 
 .text {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.text div {
+  overflow: hidden;
+  display: flex;
+  gap: 5px;
+}
+
+.text div span {
+  min-width: fit-content;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 0.9rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .text h3,
 .text address,
 .text p {
-  max-width: 15rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
   margin: 0;
 }
 
 .text h3 {
-  margin-bottom: 1rem;
-}
-
-.text address {
-  margin: 0.25rem 0;
+  margin-bottom: 0.75rem;
 }
 
 .text p {

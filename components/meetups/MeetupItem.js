@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import classes from "./MeetupItem.module.css";
 
 const MeetupItem = ({ meetup }) => {
-  const { id, title, images, date, address, description } = meetup;
+  const { id, title, tags, images, date, address, description } = meetup;
 
   const router = useRouter();
 
@@ -19,6 +19,11 @@ const MeetupItem = ({ meetup }) => {
       </div>
       <div className={classes.text}>
         <h3>{title}</h3>
+        <div>
+          {tags.map((tag, i) => (
+            <span key={i}>{tag}</span>
+          ))}
+        </div>
         <p>{date}</p>
         <address>{address}</address>
         <p>

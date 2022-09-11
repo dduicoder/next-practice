@@ -1,38 +1,16 @@
 import { useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleInfo,
-  faPlus,
-  faMinus,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+
+import MeetupImageField from "./MeetupImageField";
+import MeetupTagField from "./MeetupTagField";
 
 import classes from "./MeetupForm.module.css";
 
 const MeetupForm = ({ onAddMeetup }) => {
-  const [imageFields, setImageFields] = useState([""]);
-
-  const changeField = (text, i) => {
-    setImageFields((prevData) => {
-      const data = [...prevData];
-      data[i] = text;
-      return data;
-    });
-  };
-
-  const addField = () => {
-    setImageFields((prevData) => {
-      return [...prevData, ""];
-    });
-  };
-
-  const removeField = (i) => {
-    setImageFields((prevData) => {
-      const data = [...prevData];
-      data.splice(i, 1);
-      return data;
-    });
-  };
+  const [images, setImages] = useState([""]);
+  const [tags, setTags] = useState([]);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -43,7 +21,8 @@ const MeetupForm = ({ onAddMeetup }) => {
 
     onAddMeetup({
       title,
-      images: imageFields,
+      tags,
+      images,
       date,
       address,
       description,
@@ -56,32 +35,15 @@ const MeetupForm = ({ onAddMeetup }) => {
     <form className={classes.form} onSubmit={submitHandler}>
       <label htmlFor="title">Meetup Title</label>
       <input required pattern=".*\S+.*" name="title" type="text" id="title" />
-      <label htmlFor="image-input0" className={classes.info}>
-        Meetup Image
-        <div data="Input image URL">
+      <label className={classes.info}>
+        Meetup Tags
+        <div data="Not required. Press enter to add, click to remove">
           <FontAwesomeIcon icon={faCircleInfo} />
         </div>
       </label>
-      {imageFields.map((text, i) => {
-        return (
-          <div className={classes.image} key={i}>
-            <input
-              onChange={(e) => changeField(e.target.value, i)}
-              value={text}
-              required
-              type="url"
-              id={`image-input${i}`}
-            />
-            <button
-              type="button"
-              className="btn"
-              onClick={i === 0 ? addField : () => removeField(i)}
-            >
-              <FontAwesomeIcon icon={i === 0 ? faPlus : faMinus} />
-            </button>
-          </div>
-        );
-      })}
+      <MeetupTagField tags={tags} setTags={setTags} />
+      <label htmlFor="image-input0">Meetup Images</label>
+      <MeetupImageField images={images} setImages={setImages} />
       <label htmlFor="date" className={classes.info}>
         Meetup Date
         <div data="Minimum date: today">

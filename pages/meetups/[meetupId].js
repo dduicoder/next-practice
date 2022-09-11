@@ -72,6 +72,7 @@ export const getStaticProps = async (context) => {
       meetup: {
         id: meetup._id.toString(),
         title: meetup.title,
+        tags: meetup.tags,
         images: meetup.images,
         date: meetup.date,
         address: meetup.address,
