@@ -6,7 +6,7 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 import classes from "./Select.module.css";
 
-const Select = ({ value, setValue, options }) => {
+const Select = ({ value, setValue, options, description, className }) => {
   const [showSelect, setShowSelect] = useState(false);
 
   const wrapperRef = useRef();
@@ -31,8 +31,8 @@ const Select = ({ value, setValue, options }) => {
 
   return (
     <div ref={wrapperRef} className={classes.select}>
-      <button className="btn" onClick={() => setShowSelect(!showSelect)}>
-        {value}{" "}
+      <button className={className} onClick={() => setShowSelect(!showSelect)}>
+        {description ? description : value}{" "}
         <FontAwesomeIcon
           className={showSelect ? classes.rotate : ""}
           icon={faAngleDown}

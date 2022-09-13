@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -8,11 +8,25 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import SideNavigation from "./SideNavigation";
 
 import classes from "./Header.module.css";
+import Select from "../UI/Select";
 
 const Header = () => {
   const [showSide, setShowSide] = useState(false);
+  const [navLink, setNavLink] = useState(null);
 
   const router = useRouter();
+
+  useEffect(() => {
+    if (navLink) {
+      router.push(`/${navLink}/write`);
+    }
+  }, [navLink, router]);
+
+  const anchorClassName = (link) => {
+    return router.pathname.startsWith(`/${link}`) ? classes.active : "";
+  };
+
+  const options = ["group", "meetups", "community"];
 
   return (
     <header className={classes.header}>
@@ -30,22 +44,22 @@ const Header = () => {
         }}
       />
       <nav className={classes.nav}>
+        <Link href="/group">
+          <a className={anchorClassName("group")}>Group</a>
+        </Link>
         <Link href="/meetups">
-          <a
-            className={
-              router.pathname.startsWith("/meetups") ? classes.active : ""
-            }
-          >
-            All Meetups
-          </a>
+          <a className={anchorClassName("meetups")}>Meetups</a>
         </Link>
-        <Link href="/new-meetup">
-          <a
-            className={router.pathname === "/new-meetup" ? classes.active : ""}
-          >
-            Add Meetup
-          </a>
+        <Link href="/community">
+          <a className={anchorClassName("community")}>Community</a>
         </Link>
+        <Select
+          value={navLink}
+          setValue={setNavLink}
+          options={options}
+          description="Write"
+          className="btn-flat"
+        />
       </nav>
     </header>
   );

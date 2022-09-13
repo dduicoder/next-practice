@@ -32,6 +32,16 @@
   background-color: rgba(0, 0, 0, 0.025);
 }
 
+.select ul li:first-child {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.select ul li:last-child {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
 .current {
   background-color: rgba(0, 0, 0, 0.05);
 }

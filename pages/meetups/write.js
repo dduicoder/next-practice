@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import MeetupForm from "../components/meetups/form/MeetupForm";
+import MeetupForm from "../../components/meetups/form/MeetupForm";
 
-const NewMeetupPage = () => {
+const WriteMeetupPage = () => {
   const router = useRouter();
 
   const addMeetup = (meetupData) => {
@@ -29,4 +29,4 @@ const NewMeetupPage = () => {
   );
 };
 
-export default NewMeetupPage;
+export default WriteMeetupPage;

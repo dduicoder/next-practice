@@ -45,6 +45,7 @@ const MeetupList = ({ meetups }) => {
           value={searchOption}
           setValue={setSearchOption}
           options={options}
+          className="btn"
         />
       </div>
       {filteredMeetups.length !== 0 ? (

@@ -18,8 +18,13 @@
   font-weight: bold;
 }
 
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
 .nav a {
-  margin-left: 1rem;
   font-size: 1rem;
   transition: all 0.25s ease-in-out;
   padding: 5px 0;
