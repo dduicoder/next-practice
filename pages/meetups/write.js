@@ -7,7 +7,7 @@ const WriteMeetupPage = () => {
   const router = useRouter();
 
   const addMeetup = (meetupData) => {
-    fetch("/api/new-meetup", {
+    fetch("/api/add-meetup", {
       method: "POST",
       body: JSON.stringify(meetupData),
       headers: {
@@ -21,7 +21,7 @@ const WriteMeetupPage = () => {
   return (
     <>
       <Head>
-        <title>Meetups - Add meetup</title>
+        <title>Meetups - Write meetup</title>
         <meta name="description" content="Post your meetups." />
       </Head>
       <MeetupForm onAddMeetup={addMeetup} />

@@ -34,7 +34,15 @@
 .nav a:hover,
 .nav a:active,
 .nav a.active {
-  border-color: #f7323f;
+  border-color: var(--main-color);
+}
+
+.nav div ul li {
+  background-color: white;
+}
+
+.nav div ul li:hover {
+  background-color: rgba(0, 0, 0, 0.025) !important;
 }
 
 .header > svg {

@@ -34,12 +34,12 @@
 }
 
 .tags::-webkit-scrollbar {
-  height: 0.5rem;
+  height: 5px;
 }
 
 .tags::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 1rem;
+  border-radius: 5px;
 }
 
 .tags span {

@@ -12,18 +12,11 @@ import Select from "../UI/Select";
 
 const Header = () => {
   const [showSide, setShowSide] = useState(false);
-  const [navLink, setNavLink] = useState(null);
 
   const router = useRouter();
 
-  useEffect(() => {
-    if (navLink) {
-      router.push(`/${navLink}/write`);
-    }
-  }, [navLink, router]);
-
-  const anchorClassName = (link) => {
-    return router.pathname.startsWith(`/${link}`) ? classes.active : "";
+  const Navigate = (link) => {
+    router.push(`/${link}/write`);
   };
 
   const options = ["group", "meetups", "community"];
@@ -44,20 +37,24 @@ const Header = () => {
         }}
       />
       <nav className={classes.nav}>
-        <Link href="/group">
-          <a className={anchorClassName("group")}>Group</a>
-        </Link>
-        <Link href="/meetups">
-          <a className={anchorClassName("meetups")}>Meetups</a>
-        </Link>
-        <Link href="/community">
-          <a className={anchorClassName("community")}>Community</a>
-        </Link>
+        {options.map((option, i) => {
+          return (
+            <Link href={`/${option}`} key={i}>
+              <a
+                className={
+                  router.pathname.startsWith(`/${option}`) ? classes.active : ""
+                }
+              >
+                {option}
+              </a>
+            </Link>
+          );
+        })}
         <Select
-          value={navLink}
-          setValue={setNavLink}
+          value={null}
+          setValue={Navigate}
           options={options}
-          description="Write"
+          description="write"
           className="btn-flat"
         />
       </nav>

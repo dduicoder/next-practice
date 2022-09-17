@@ -1,14 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 
-import Backdrop from "./Backdrop";
-import Portal from "./Portal";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
+
+import Backdrop from "./Backdrop";
+import Portal from "./Portal";
 
 import classes from "./Slider.module.css";
 

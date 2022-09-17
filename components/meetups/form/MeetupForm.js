@@ -78,7 +78,7 @@ const MeetupForm = ({ onAddMeetup }) => {
       </label>
       <textarea name="description" id="description" rows="5"></textarea>
       <div className={classes.action}>
-        <button className="btn-flat">Add Meetup</button>
+        <button className="btn-flat">Submit</button>
       </div>
     </form>
   );

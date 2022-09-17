@@ -1,10 +1,10 @@
 import { CSSTransition } from "react-transition-group";
 
-import Backdrop from "../UI/Backdrop";
-import Portal from "../UI/Portal";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+
+import Backdrop from "../UI/Backdrop";
+import Portal from "../UI/Portal";
 
 import classes from "./MeetupModal.module.css";
 
@@ -42,7 +42,7 @@ const MeetupModal = ({ show, close, meetup }) => {
             <p>
               Date: {date} (
               {Math.round(
-                (meetupDate.getTime() - currentDate.getTime()) / 86400000
+                (meetupDate.getTime() - currentDate.getTime()) / 86400000 + 1
               )}{" "}
               days left)
             </p>

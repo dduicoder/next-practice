@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import MeetupModal from "./MeetupModal";
-
 import Slider from "../UI/Slider";
 
 import classes from "./Meetup.module.css";
