@@ -6,8 +6,8 @@ import MeetupForm from "../../components/meetups/form/MeetupForm";
 const WriteMeetupPage = () => {
   const router = useRouter();
 
-  const addMeetup = (meetupData) => {
-    fetch("/api/add-meetup", {
+  const writeMeetup = (meetupData) => {
+    fetch("/api/write-meetup", {
       method: "POST",
       body: JSON.stringify(meetupData),
       headers: {
@@ -24,7 +24,7 @@ const WriteMeetupPage = () => {
         <title>Meetups - Write meetup</title>
         <meta name="description" content="Post your meetups." />
       </Head>
-      <MeetupForm onAddMeetup={addMeetup} />
+      <MeetupForm onWriteMeetup={writeMeetup} />
     </>
   );
 };

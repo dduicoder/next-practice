@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
+import NotificationProvider from "../components/notification/NotificationProvider";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Loader from "../components/UI/Loader";
@@ -24,7 +25,7 @@ const App = ({ Component, pageProps }) => {
   });
 
   return (
-    <>
+    <NotificationProvider>
       <div id="overlays"></div>
       {loading && <Loader />}
       {router.pathname !== "/" ? (
@@ -38,7 +39,7 @@ const App = ({ Component, pageProps }) => {
       ) : (
         <Component {...pageProps} />
       )}
-    </>
+    </NotificationProvider>
   );
 };
 

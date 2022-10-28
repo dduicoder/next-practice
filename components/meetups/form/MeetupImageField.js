@@ -20,9 +20,7 @@ const MeetupImageField = ({ images, setImages }) => {
 
   const removeField = (i) => {
     setImages((prevData) => {
-      const data = [...prevData];
-      data.splice(i, 1);
-      return data;
+      return prevData.filter((el) => el !== prevData[i]);
     });
   };
 

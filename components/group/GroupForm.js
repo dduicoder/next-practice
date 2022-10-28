@@ -1,12 +1,10 @@
-import classes from "./CommunityForm.module.css";
-
-const CommunityForm = ({ onWriteCommunity }) => {
+const GroupForm = ({ onWriteGroup }) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
     const { title, text } = Object.fromEntries(new FormData(event.target));
 
-    onWriteCommunity({
+    onWriteGroup({
       title,
       text,
       date: new Date().toISOString().split("T")[0],
@@ -14,16 +12,14 @@ const CommunityForm = ({ onWriteCommunity }) => {
   };
 
   return (
-    <form className={classes.form} onSubmit={submitHandler}>
+    <form onSubmit={submitHandler}>
       <label htmlFor="title">Title</label>
       <input required pattern=".*\S+.*" name="title" type="text" id="title" />
       <label htmlFor="text">Text</label>
-      <textarea required name="text" id="text" rows="10"></textarea>
-      <div className={classes.action}>
-        <button className="btn-flat">Submit</button>
-      </div>
+      <input required pattern=".*\S+.*" name="text" type="text" id="text" />
+      <button className="btn-flat">Submit</button>
     </form>
   );
 };
 
-export default CommunityForm;
+export default GroupForm;

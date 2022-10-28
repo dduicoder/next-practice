@@ -8,7 +8,7 @@ import MeetupTagField from "./MeetupTagField";
 
 import classes from "./MeetupForm.module.css";
 
-const MeetupForm = ({ onAddMeetup }) => {
+const MeetupForm = ({ onWriteMeetup }) => {
   const [images, setImages] = useState([""]);
   const [tags, setTags] = useState([]);
 
@@ -19,7 +19,7 @@ const MeetupForm = ({ onAddMeetup }) => {
       new FormData(event.target)
     );
 
-    onAddMeetup({
+    onWriteMeetup({
       title,
       tags,
       images,

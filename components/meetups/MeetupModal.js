@@ -1,3 +1,5 @@
+import { useNotification } from "../notification/NotificationProvider";
+
 import { CSSTransition } from "react-transition-group";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,10 +11,32 @@ import Portal from "../UI/Portal";
 import classes from "./MeetupModal.module.css";
 
 const MeetupModal = ({ show, close, meetup }) => {
+  const dispatch = useNotification();
+
   const { title, date, address, description } = meetup;
 
   const submitHandler = (event) => {
     event.preventDefault();
+
+    const { description } = Object.fromEntries(new FormData(event.target));
+
+    if (description.trim().length === 0) {
+      dispatch({
+        type: "ERROR",
+        message: "Please write a description",
+        title: "Successful Request",
+      });
+
+      return;
+    }
+
+    dispatch({
+      type: "SUCCESS",
+      message: "Meetup request sent!",
+      title: "Successful Request",
+    });
+
+    close();
   };
 
   const meetupDate = new Date(date);
@@ -50,7 +74,11 @@ const MeetupModal = ({ show, close, meetup }) => {
             <p>Description: {description}</p>
             <form onSubmit={submitHandler}>
               <label htmlFor="meetup-description">Describe yourself</label>
-              <textarea id="meetup-description" rows="5"></textarea>
+              <textarea
+                name="description"
+                id="meetup-description"
+                rows="5"
+              ></textarea>
               <div className={classes.action}>
                 <p>Make sure that this is your correct meetup</p>
                 <div>

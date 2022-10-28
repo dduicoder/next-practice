@@ -6,8 +6,8 @@ import CommunityForm from "../../components/community/CommunityForm";
 const WriteCommunityPage = () => {
   const router = useRouter();
 
-  const addCommunity = (communityData) => {
-    fetch("/api/add-community", {
+  const writeCommunity = (communityData) => {
+    fetch("/api/write-community", {
       method: "POST",
       body: JSON.stringify(communityData),
       headers: {
@@ -22,9 +22,8 @@ const WriteCommunityPage = () => {
     <>
       <Head>
         <title>Meetups - Write community</title>
-        <meta name="description" content="Meetup with the world!" />
       </Head>
-      <CommunityForm onAddCommunity={addCommunity} />
+      <CommunityForm onWriteCommunity={writeCommunity} />
     </>
   );
 };

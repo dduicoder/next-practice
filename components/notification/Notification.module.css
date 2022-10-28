@@ -1,0 +1,54 @@
+.notification {
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  background-color: #343434;
+  color: white;
+  animation: pop-in 0.25s ease-in-out forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.success {
+  background-color: rgb(50, 230, 50);
+}
+
+.error {
+  background-color: var(--main-color);
+}
+
+.bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.15);
+  transition: width 200ms linear;
+}
+
+.close {
+  animation: pop-out 0.25s ease-in-out forwards;
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pop-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+}

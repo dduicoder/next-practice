@@ -1,0 +1,12 @@
+.notifications {
+  position: fixed;
+  width: min(95%, 30rem);
+  left: 2.5vw;
+  bottom: 2.5vw;
+  overflow-x: hidden;
+  z-index: 50;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.5rem;
+  padding-right: 0.5rem;
+}

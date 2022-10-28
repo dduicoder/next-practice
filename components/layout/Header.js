@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -19,6 +19,10 @@ const Header = () => {
     router.push(`/${link}/write`);
   };
 
+  const anchorClassName = (link) => {
+    return router.pathname.startsWith(`/${link}`) ? classes.active : "";
+  };
+
   const options = ["group", "meetups", "community"];
 
   return (
@@ -37,24 +41,23 @@ const Header = () => {
         }}
       />
       <nav className={classes.nav}>
-        {options.map((option, i) => {
-          return (
-            <Link href={`/${option}`} key={i}>
-              <a
-                className={
-                  router.pathname.startsWith(`/${option}`) ? classes.active : ""
-                }
-              >
-                {option}
-              </a>
-            </Link>
-          );
-        })}
+        <Link href={"/auth"}>
+          <a className={anchorClassName("auth")}>Auth</a>
+        </Link>
+        <Link href={"/group"}>
+          <a className={anchorClassName("group")}>Group</a>
+        </Link>
+        <Link href={"/meetups"}>
+          <a className={anchorClassName("meetups")}>Meetups</a>
+        </Link>
+        <Link href={"/community"}>
+          <a className={anchorClassName("community")}>Community</a>
+        </Link>
         <Select
           value={null}
           setValue={Navigate}
           options={options}
-          description="write"
+          description="Write"
           className="btn-flat"
         />
       </nav>
