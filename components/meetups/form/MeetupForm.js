@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNotification } from "../../notification/NotificationProvider";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +10,8 @@ import MeetupTagField from "./MeetupTagField";
 import classes from "./MeetupForm.module.css";
 
 const MeetupForm = ({ onWriteMeetup }) => {
+  const dispatch = useNotification();
+
   const [images, setImages] = useState([""]);
   const [tags, setTags] = useState([]);
 
@@ -18,6 +21,12 @@ const MeetupForm = ({ onWriteMeetup }) => {
     const { title, date, address, description } = Object.fromEntries(
       new FormData(event.target)
     );
+
+    dispatch({
+      type: "SUCCESS",
+      message: "Meetup was successfully sent!",
+      title: "Successful Request",
+    });
 
     onWriteMeetup({
       title,

@@ -10,6 +10,9 @@ const CommunityForm = ({ onWriteCommunity }) => {
       title,
       text,
       date: new Date().toISOString().split("T")[0],
+      views: 0,
+      likes: 0,
+      comments: 0,
     });
   };
 

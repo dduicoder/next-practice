@@ -3,11 +3,19 @@
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-  background-color: #343434;
+  background-color: #434343;
   color: white;
   animation: pop-in 0.25s ease-in-out forwards;
   position: relative;
   overflow: hidden;
+}
+
+.bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.25rem;
+  transition: width 200ms linear;
 }
 
 .success {
@@ -16,15 +24,6 @@
 
 .error {
   background-color: var(--main-color);
-}
-
-.bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 0.25rem;
-  background-color: rgba(0, 0, 0, 0.15);
-  transition: width 200ms linear;
 }
 
 .close {

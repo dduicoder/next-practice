@@ -52,12 +52,15 @@ const Notification = ({ dispatch, id, message, type }) => {
       onMouseEnter={pauseTimer}
       onMouseLeave={startTimer}
       onClick={closeNotification}
-      className={`${classes.notification} ${
-        type === "SUCCESS" ? classes.success : classes.error
-      } ${exit ? classes.close : ""}`}
+      className={`${classes.notification}  ${exit ? classes.close : ""}`}
     >
       {message}
-      <div className={classes.bar} style={{ width: `${width}%` }} />
+      <div
+        className={`${classes.bar} ${
+          type === "SUCCESS" ? classes.success : classes.error
+        }`}
+        style={{ width: `${width}%` }}
+      />
     </div>
   );
 };

@@ -1,0 +1,62 @@
+.modal {
+  padding: 1rem;
+  border-radius: 1rem;
+  position: fixed;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 45rem);
+  height: 80vh;
+  z-index: 5;
+  overflow-y: scroll;
+  background-color: white;
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.control svg {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.control h1 {
+  margin: 0;
+}
+
+.open {
+  animation: pop-in 0.25s ease-in-out forwards;
+}
+
+.close {
+  animation: pop-out 0.25s ease-in-out forwards;
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    top: 5vh;
+  }
+  to {
+    opacity: 1;
+    top: 10vh;
+  }
+}
+
+@keyframes pop-out {
+  from {
+    opacity: 1;
+    top: 10vh;
+  }
+  to {
+    opacity: 0;
+    top: 5vh;
+  }
+}

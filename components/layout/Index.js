@@ -41,7 +41,7 @@ const Index = () => {
             <Link href="/meetups">
               <button className="btn">View Meetups</button>
             </Link>
-            <Link href="/new-meetup">
+            <Link href="/meetups/write">
               <button className="btn-flat">Add Meetup</button>
             </Link>
           </div>
