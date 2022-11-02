@@ -16,11 +16,20 @@
   text-align: center;
 }
 
+.wrapper > section > * {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.show > * {
+  opacity: 1 !important;
+}
+
 .wrapper h1 {
   font-size: 3rem;
 }
 
-.wrapper h1:not(.second h1) {
+.gradient {
   background: linear-gradient(
     45deg,
     rgb(255, 175, 0) 0%,
@@ -45,13 +54,13 @@
   }
 }
 
-.wrapper h1:not(.second h1)::selection {
+.gradient::selection {
   -webkit-text-fill-color: white;
   color: white;
   background: var(--main-color);
 }
 
-.wrapper section p {
+.wrapper p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
 }

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,12 +24,31 @@ const Index = () => {
     "https://memberpress.com/wp-content/uploads/2019/10/Member-Meetup@2x.png",
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((event) => {
+      event.forEach((section) => {
+        if (section.isIntersecting) {
+          section.target.classList.add(classes.show);
+        }
+      });
+    });
+
+    const sections = document.querySelectorAll(`.${classes.wrapper} > section`);
+    observer.observe(sections[0]);
+    observer.observe(sections[1]);
+    observer.observe(sections[2]);
+
+    return () => observer.disconnect();
+  });
+
   return (
     <>
       <div className={classes.wrapper}>
         <Header />
         <section className={classes.first}>
-          <h1>Post your meetups, Meetup with the world</h1>
+          <h1 className={classes.gradient}>
+            Post your meetups, Meetup with the world
+          </h1>
           <p>
             {/* Discover meetups all around the world and meetup with various
             peoples, Post your own meetup and be the host to your meetup. */}
@@ -100,7 +120,7 @@ const Index = () => {
           </div>
         </section>
         <section className={classes.third}>
-          <h1>Interaction</h1>
+          <h1 className={classes.gradient}>Interaction</h1>
           <Slider imgs={imgs} />
           <p>
             {/* We have had 3 million total meetups so far. In the process, we

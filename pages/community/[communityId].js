@@ -1,10 +1,15 @@
 import { MongoClient, ObjectId } from "mongodb";
 import Head from "next/head";
+import { useEffect } from "react";
 
 import Community from "../../components/community/Community";
 import NotFound from "../../components/layout/NotFound";
 
 const CommunityPage = ({ community }) => {
+  useEffect(() => {
+    console.log("View community");
+  });
+
   return (
     <>
       <Head>
@@ -76,6 +81,9 @@ export const getStaticProps = async (context) => {
         title: community.title,
         text: community.text,
         date: community.date,
+        views: community.views,
+        likes: community.likes,
+        comments: community.comments,
       },
     },
   };

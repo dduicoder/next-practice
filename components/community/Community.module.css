@@ -2,3 +2,12 @@
   padding-bottom: 1rem;
   border-bottom: 2px solid rgba(0, 0, 0, 0.5);
 }
+
+.community div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.community div p {
+  margin: 0;
+}
