@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&family=Roboto:ital,wght@1,900&display=swap");
+
 .wrapper {
   height: 100vh;
   overflow-x: hidden;
@@ -12,13 +14,13 @@
 .wrapper > section {
   min-height: calc(100vh - 4rem);
   padding: 1rem;
-  padding-top: 3rem;
+  padding-top: 5rem;
   text-align: center;
 }
 
 .wrapper > section > * {
   opacity: 0;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .show > * {
@@ -26,10 +28,11 @@
 }
 
 .wrapper h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 .gradient {
+  font-family: "Lato", sans-serif;
   background: linear-gradient(
     45deg,
     rgb(255, 175, 0) 0%,
